@@ -312,11 +312,18 @@
             });
         });
 
-        // Banner animation on scroll
+        // Banner parallax effect - cải thiện
         window.addEventListener('scroll', () => {
             const banner = document.querySelector('.banner');
             const scrollY = window.scrollY;
-            banner.style.transform = `translateY(${scrollY * 0.5}px)`;
+            const bannerHeight = banner.offsetHeight;
+            
+            // Chỉ áp dụng parallax khi scroll trong vùng banner
+            if (scrollY < bannerHeight) {
+                banner.style.transform = `translateY(${scrollY * 0.2}px)`;
+            } else {
+                banner.style.transform = 'translateY(0)';
+            }
         });
     </script>
 </body>
