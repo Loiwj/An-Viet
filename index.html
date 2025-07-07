@@ -3,23 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ấn Việt - Dấu Ấn Rồng Thiên</title>
+    <title>Ấn Việt - Thất Ấn Khởi Nguyên</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <img src="images/logo.png" alt="Ấn Việt Logo" class="logo-loading">
+            </div>
+            <div class="loading-text">
+                <h2>Ấn Việt</h2>
+                <p>Thất Ấn Khởi Nguyên</p>
+            </div>
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+            </div>
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <nav class="nav">
             <div class="nav-brand">
-                <h1>Ấn Việt</h1>
+                <a href="#home" class="logo-link">
+                    <img src="images/logo.png" alt="Ấn Việt Logo" class="logo">
+                </a>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home">Trang Chủ</a></li>
-                <li><a href="#games">Game</a></li>
-                <li><a href="#news">Tin Tức</a></li>
-                <li><a href="#download">Tải Game</a></li>
-                <li><a href="#contact">Liên Hệ</a></li>
+                <li class="nav-item">
+                    <a href="#home">TRANG CHỦ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#news">TIN TỨC</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about">GIỚI THIỆU</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#guide">HƯỚNG DẪN</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#community">CỘNG ĐỒNG</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#support">HỖ TRỢ</a>
+                </li>
             </ul>
+            <div class="search-box">
+                <input type="text" placeholder="Nhập từ khóa tìm kiếm">
+                <button type="submit">
+                    <img src="images/kinhlup.png" alt="search" style="width: 20px; height: 20px;">
+                </button>
+            </div>
             <div class="nav-toggle">
                 <span></span>
                 <span></span>
@@ -28,73 +72,57 @@
         </nav>
     </header>
 
-    <!-- Banner Section -->
-    <section id="home" class="banner">
-        <div class="banner-content">
-            <div class="banner-text">
-                <h2 class="banner-subtitle">Game mới nhất từ Ổ Quỷ</h2>
-                <h1 class="banner-title">Ấn Việt - Dấu Ấn Rồng Thiên</h1>
-                <p class="banner-description">
-                    Khám phá thế giới fantasy đầy bí ẩn với đồ họa 2D tuyệt đẹp. 
-                    Tham gia vào các trận chiến epic cùng hàng triệu game thủ trên toàn thế giới.
-                </p>
-                <div class="banner-buttons">
-                    <button class="btn btn-primary">Chơi Ngay</button>
-                    <button class="btn btn-secondary">Xem Trailer</button>
-                </div>
-            </div>
-            <div class="banner-image">
-                <div class="game-preview">
-                    <div class="preview-placeholder">
-                        <span>🎮</span>
-                        <p>Ấn Việt</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Games Section -->
-    <section id="games" class="games">
+    <!-- Main Content Section -->
+    <section id="home" class="main-content">
         <div class="container">
-            <h2 class="section-title">Game Nổi Bật</h2>
-            <div class="games-grid">
-                <div class="game-card">
-                    <div class="game-image">
-                        <div class="image-placeholder">🏰</div>
-                    </div>
-                    <div class="game-info">
-                        <h3>Dragon Empire</h3>
-                        <p class="game-genre">MMORPG</p>
-                        <button class="btn btn-small">Chơi Ngay</button>
-                    </div>
+            <!-- Large Banner Image -->
+            <div class="main-banner-image">
+                <div class="banner-placeholder">
+                    <p>Tấm hình banner chính</p>
                 </div>
-                <div class="game-card">
-                    <div class="game-image">
-                        <div class="image-placeholder">🚗</div>
+            </div>
+
+            <!-- Content Grid
+            <div class="content-grid-section">
+                <div class="grid-row">
+                    <div class="content-box">
+                        <div class="box-header">
+                            <h3>Nội dung 1</h3>
+                        </div>
+                        <div class="box-content">
+                            <p>Vùng nội dung để chèn thông tin</p>
+                        </div>
                     </div>
-                    <div class="game-info">
-                        <h3>Speed Racing</h3>
-                        <p class="game-genre">Racing</p>
-                        <button class="btn btn-small">Chơi Ngay</button>
+                    <div class="content-box">
+                        <div class="box-header">
+                            <h3>Nội dung 2</h3>
+                        </div>
+                        <div class="box-content">
+                            <p>Vùng nội dung để chèn thông tin</p>
+                        </div>
                     </div>
-                </div>
-                <div class="game-card">
-                    <div class="game-image">
-                        <div class="image-placeholder">⚔️</div>
-                    </div>
-                    <div class="game-info">
-                        <h3>Battle Arena</h3>
-                        <p class="game-genre">MOBA</p>
-                        <button class="btn btn-small">Chơi Ngay</button>
+                    <div class="content-box">
+                        <div class="box-header">
+                            <h3>Nội dung 3</h3>
+                        </div>
+                        <div class="box-content">
+                            <p>Vùng nội dung để chèn thông tin</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+                <!-- Action Button -->
+                <div class="action-section">
+                    <button class="btn btn-action">Xem thêm 
+                        <img src="images/muiten_xemthem.png" alt="search" style=" height: 20px;">
+                    </button>
+                </div>
+            
     </section>
 
-    <!-- News Section -->
-    <section id="news" class="news">
+    <!-- News & Events Section -->
+    <section id="news" class="news-section">
         <div class="container">
             <h2 class="section-title">Tin Tức & Sự Kiện</h2>
             <div class="news-grid">
@@ -103,9 +131,9 @@
                         <div class="image-placeholder">📰</div>
                     </div>
                     <div class="news-content">
-                        <h3>Cập nhật mới cho Ấn Việt: Ngọc nhi ngủ chưa thức</h3>
+                        <h3>Tiêu đề tin tức 1</h3>
                         <p class="news-date">25/12/2024</p>
-                        <p class="news-excerpt">Khám phá map mới với nhiều thử thách khó khăn và phần thưởng hấp dẫn...</p>
+                        <p class="news-excerpt">Mô tả ngắn gọn về tin tức...</p>
                     </div>
                 </article>
                 <article class="news-card">
@@ -113,9 +141,9 @@
                         <div class="image-placeholder">🎉</div>
                     </div>
                     <div class="news-content">
-                        <h3>Sự kiện Tết 2025: Săn Boss Rồng Vàng</h3>
+                        <h3>Tiêu đề tin tức 2</h3>
                         <p class="news-date">22/12/2024</p>
-                        <p class="news-excerpt">Tham gia sự kiện đặc biệt mừng Tết Nguyên Đán với phần thưởng cực khủng...</p>
+                        <p class="news-excerpt">Mô tả ngắn gọn về tin tức...</p>
                     </div>
                 </article>
                 <article class="news-card">
@@ -123,50 +151,46 @@
                         <div class="image-placeholder">🏆</div>
                     </div>
                     <div class="news-content">
-                        <h3>Giải đấu Gaming Championship 2025 chính thức khởi tranh</h3>
+                        <h3>Tiêu đề tin tức 3</h3>
                         <p class="news-date">20/12/2024</p>
-                        <p class="news-excerpt">Đăng ký ngay để tham gia giải đấu lớn nhất năm với tổng giải thưởng 1 tỷ VNĐ...</p>
+                        <p class="news-excerpt">Mô tả ngắn gọn về tin tức...</p>
                     </div>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- Download Section -->
-    <section id="download" class="download">
-        <div class="container">
-            <div class="download-content">
-                <h2>Tải Ngay Ấn Việt</h2>
-                <p>Khám phá thế giới game tuyệt vời trên mọi thiết bị</p>
-                <div class="download-buttons">
-                    <button class="btn btn-download">
-                        <span class="download-icon">📱</span>
-                        <div>
-                            <small>Tải cho</small>
-                            <strong>Android</strong>
-                        </div>
-                    </button>
-                    <button class="btn btn-download">
-                        <span class="download-icon">🍎</span>
-                        <div>
-                            <small>Tải cho</small>
-                            <strong>iOS</strong>
-                        </div>
-                    </button>
-                    <button class="btn btn-download">
-                        <span class="download-icon">💻</span>
-                        <div>
-                            <small>Tải cho</small>
-                            <strong>PC</strong>
-                        </div>
-                    </button>
+    <!-- Download Badges -->
+    <div class="download-badges">
+        <a href="#" class="app-store-badge">
+            <div class="badge-content">
+                <div class="apple-logo">
+                    <svg width="24" height="29" viewBox="0 0 24 29" fill="none">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="badge-text">
+                    <div class="badge-subtitle">Available on the</div>
+                    <div class="badge-title">App Store</div>
                 </div>
             </div>
-        </div>
-    </section>
+        </a>
+        
+        <a href="#" class="google-play-badge">
+            <div class="badge-content">
+                <div class="play-logo">
+                    <img src="images/google-play-store-logo-svgrepo-com.svg" alt="googleplay" style="width: 20px; height: 20px;">
+                </div>
+                <div class="badge-text">
+                    <div class="badge-subtitle">GET IT ON</div>
+                    <div class="badge-title">Google Play</div>
+                </div>
+            </div>
+        </a>
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+       <!-- Contact Section -->
+       <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Liên Hệ Với Chúng Tôi</h2>
             <div class="contact-content">
@@ -241,17 +265,15 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <h3>Ấn Việt</h3>
+                    <img src="images/logo.png" alt="Ấn Việt Logo" class="footer-logo">
                     <p>Nền tảng game hàng đầu Việt Nam</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-column">
                         <h4>Sản Phẩm</h4>
                         <ul>
-                            <li><a href="#">Ấn Việt - Dấu Ấn Rồng Thiên</a></li>
-                            <li><a href="#">Dragon Empire</a></li>
-                            <li><a href="#">Speed Racing</a></li>
-                            <li><a href="#">Battle Arena</a></li>
+                            <li><a href="#">Ấn Việt - Thất Ấn Khởi Nguyên</a></li>
+                            <li><a href="#">Game khác</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -260,7 +282,6 @@
                             <li><a href="#">Trung tâm trợ giúp</a></li>
                             <li><a href="#">Báo lỗi</a></li>
                             <li><a href="#">Điều khoản sử dụng</a></li>
-                            <li><a href="#">Chính sách bảo mật</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -268,27 +289,49 @@
                         <ul>
                             <li><a href="#">📧 support@anviet.vn</a></li>
                             <li><a href="#">📞 1900 8888</a></li>
-                            <li><a href="#">📍 TP.HCM, Việt Nam</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Theo Dõi</h4>
-                        <ul>
-                            <li><a href="#">📘 Facebook</a></li>
-                            <li><a href="#">📸 Instagram</a></li>
-                            <li><a href="#">🐦 Twitter</a></li>
-                            <li><a href="#">📺 YouTube</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Ấn Việt. Tất cả quyền được bảo lưu.</p>
+                <p>&copy; 2025 Ấn Việt. Tất cả quyền được bảo lưu.</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // Loading Screen Management
+        window.addEventListener('load', function() {
+            const loadingScreen = document.getElementById('loading-screen');
+            
+            // Minimum loading time để user có thể thấy loading screen
+            setTimeout(() => {
+                loadingScreen.classList.add('hide');
+                
+                // Remove loading screen từ DOM sau khi animation hoàn thành
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 500);
+            }, 2500); // Hiển thị loading screen ít nhất 2.5 giây
+        });
+
+        // Preload critical images
+        function preloadImages() {
+            const images = [
+                'images/logo.png',
+                'images/background1.png',
+                'images/background2.png'
+            ];
+            
+            images.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        }
+
+        // Start preloading when DOM is ready
+        document.addEventListener('DOMContentLoaded', preloadImages);
+
         // Mobile menu toggle
         const navToggle = document.querySelector('.nav-toggle');
         const navMenu = document.querySelector('.nav-menu');
@@ -312,19 +355,23 @@
             });
         });
 
-        // Banner parallax effect - cải thiện
-        window.addEventListener('scroll', () => {
-            const banner = document.querySelector('.banner');
-            const scrollY = window.scrollY;
-            const bannerHeight = banner.offsetHeight;
+        // Loading progress simulation
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressBar = document.querySelector('.progress-bar');
             
-            // Chỉ áp dụng parallax khi scroll trong vùng banner
-            if (scrollY < bannerHeight) {
-                banner.style.transform = `translateY(${scrollY * 0.2}px)`;
-            } else {
-                banner.style.transform = 'translateY(0)';
-            }
+            // Simulate realistic loading progress
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 15;
+                if (progress > 100) progress = 100;
+                
+                progressBar.style.width = progress + '%';
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                }
+            }, 200);
         });
     </script>
 </body>
-</html> 
+</html>
