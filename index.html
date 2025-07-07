@@ -62,10 +62,13 @@
                 </li>
             </ul>
             <div class="search-box">
-                <input type="text" placeholder="Nhập từ khóa tìm kiếm">
-                <button type="submit">
-                    <img src="images/kinhlup.png" alt="search" style="width: 20px; height: 20px;">
-                </button>
+                <form class="search-form" onsubmit="performSearch(event)">
+                    <input type="text" id="search-input" placeholder="Tìm kiếm..." autocomplete="off">
+                    <button type="submit">
+                        <img src="images/kinhlup.png" alt="search" style="width: 20px; height: 20px;">
+                    </button>
+                </form>
+                <div class="search-results" id="search-results"></div>
             </div>
             <div class="nav-toggle">
                 <span></span>
@@ -385,6 +388,140 @@
                     clearInterval(interval);
                 }
             }, 200);
+        });
+
+        // Search functionality
+        const searchData = [
+            {
+                title: "Ấn Việt - Thất Ấn Khởi Nguyên",
+                content: "Game mobile hấp dẫn với lối chơi chiến thuật độc đáo",
+                section: "home",
+                keywords: ["game", "mobile", "chiến thuật", "ấn việt", "thất ấn khởi nguyên"]
+            },
+            {
+                title: "Tin tức & Sự kiện",
+                content: "Cập nhật tin tức mới nhất về game và các sự kiện đặc biệt",
+                section: "news",
+                keywords: ["tin tức", "sự kiện", "update", "cập nhật", "event"]
+            },
+            {
+                title: "Hỗ trợ khách hàng",
+                content: "Trung tâm trợ giúp, chat trực tuyến, báo lỗi, hướng dẫn sử dụng",
+                section: "support",
+                keywords: ["hỗ trợ", "trợ giúp", "chat", "báo lỗi", "hướng dẫn", "support"]
+            },
+            {
+                title: "Liên hệ",
+                content: "Email: support@anviet.vn, Hotline: 1900 8888, Địa chỉ văn phòng",
+                section: "contact",
+                keywords: ["liên hệ", "email", "hotline", "địa chỉ", "support", "contact"]
+            },
+            {
+                title: "Tải game",
+                content: "Download Ấn Việt trên App Store và Google Play",
+                section: "download",
+                keywords: ["tải", "download", "app store", "google play", "cài đặt"]
+            },
+            {
+                title: "Cộng đồng",
+                content: "Tham gia cộng đồng game trên Facebook, Discord, YouTube",
+                section: "community",
+                keywords: ["cộng đồng", "facebook", "discord", "youtube", "community"]
+            }
+        ];
+
+        function performSearch(event) {
+            event.preventDefault();
+            const searchInput = document.getElementById('search-input');
+            const searchResults = document.getElementById('search-results');
+            const query = searchInput.value.trim().toLowerCase();
+
+            if (query.length < 2) {
+                searchResults.style.display = 'none';
+                return;
+            }
+
+            const results = searchData.filter(item => {
+                return item.title.toLowerCase().includes(query) ||
+                       item.content.toLowerCase().includes(query) ||
+                       item.keywords.some(keyword => keyword.includes(query));
+            });
+
+            if (results.length > 0) {
+                let html = '';
+                results.forEach(result => {
+                    html += `
+                        <div class="search-result-item" onclick="goToSection('${result.section}')">
+                            <div class="search-result-title">${result.title}</div>
+                            <div class="search-result-snippet">${result.content}</div>
+                        </div>
+                    `;
+                });
+                searchResults.innerHTML = html;
+            } else {
+                searchResults.innerHTML = '<div class="search-no-results">Không tìm thấy kết quả nào</div>';
+            }
+
+            searchResults.style.display = 'block';
+        }
+
+        function goToSection(sectionId) {
+            document.getElementById('search-results').style.display = 'none';
+            document.getElementById('search-input').value = '';
+            
+            // Close mobile menu if open
+            document.querySelector('.nav-menu').classList.remove('active');
+            document.querySelector('.nav-toggle').classList.remove('active');
+            
+            // Scroll to section
+            const targetSection = document.getElementById(sectionId) || document.querySelector(`[href="#${sectionId}"]`);
+            if (targetSection) {
+                if (sectionId === 'support') {
+                    // Scroll to footer support section
+                    document.querySelector('.footer').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                } else if (sectionId === 'download') {
+                    // Focus on download badges
+                    document.querySelector('.download-badges').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                } else if (sectionId === 'community') {
+                    // Scroll to footer community section
+                    document.querySelector('.footer').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                } else {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        }
+
+        // Real-time search as user types
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('search-input');
+            
+            searchInput.addEventListener('input', function() {
+                if (this.value.length >= 2) {
+                    performSearch({ preventDefault: () => {} });
+                } else {
+                    document.getElementById('search-results').style.display = 'none';
+                }
+            });
+
+            // Hide search results when clicking outside
+            document.addEventListener('click', function(event) {
+                const searchBox = document.querySelector('.search-box');
+                if (!searchBox.contains(event.target)) {
+                    document.getElementById('search-results').style.display = 'none';
+                }
+            });
         });
     </script>
 </body>
