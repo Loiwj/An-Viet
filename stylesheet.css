@@ -42,6 +42,27 @@
     animation: logoGlow 2s ease-in-out infinite alternate;
 }
 
+.logo-fallback {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: logoFloat 3s ease-in-out infinite;
+}
+
+.fallback-text {
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(45deg, #dbb856, #f4d03f, #dbb856);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShimmer 2s ease-in-out infinite;
+    text-shadow: 0 0 30px rgba(219, 184, 86, 0.5);
+    letter-spacing: 4px;
+}
+
 .loading-text h2 {
     font-size: 3rem;
     font-weight: 700;
@@ -1053,6 +1074,15 @@ body {
     /* Loading Screen Responsive */
     .logo-loading {
         height: 80px;
+    }
+    
+    .logo-fallback {
+        height: 80px;
+    }
+    
+    .fallback-text {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
     }
     
     .loading-text h2 {

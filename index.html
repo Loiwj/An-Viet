@@ -15,7 +15,10 @@
     <div id="loading-screen" class="loading-screen">
         <div class="loading-content">
             <div class="loading-logo">
-                <img src="images/logo.png" alt="Ấn Việt Logo" class="logo-loading">
+                <img src="images/logo.png" alt="Ấn Việt Logo" class="logo-loading" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="logo-fallback" style="display: none;">
+                    <div class="fallback-text">ẤN VIỆT</div>
+                </div>
             </div>
             <div class="loading-text">
                 <h2>Ấn Việt</h2>
@@ -300,22 +303,31 @@
     </footer>
 
     <script>
-        // Loading Screen Management
-        window.addEventListener('load', function() {
+        // Loading Screen Management với fallback
+        let loadingComplete = false;
+        
+        function hideLoadingScreen() {
             const loadingScreen = document.getElementById('loading-screen');
-            
-            // Minimum loading time để user có thể thấy loading screen
-            setTimeout(() => {
+            if (!loadingComplete && loadingScreen) {
+                loadingComplete = true;
                 loadingScreen.classList.add('hide');
                 
                 // Remove loading screen từ DOM sau khi animation hoàn thành
                 setTimeout(() => {
                     loadingScreen.style.display = 'none';
                 }, 500);
-            }, 2500); // Hiển thị loading screen ít nhất 2.5 giây
+            }
+        }
+        
+        // Hide loading screen khi window load hoặc sau timeout
+        window.addEventListener('load', function() {
+            setTimeout(hideLoadingScreen, 1500); // Giảm thời gian chờ
         });
+        
+        // Fallback timeout nếu load event không fire
+        setTimeout(hideLoadingScreen, 5000); // Maximum 5 giây
 
-        // Preload critical images
+        // Preload critical images with error handling
         function preloadImages() {
             const images = [
                 'images/logo.png',
@@ -325,6 +337,8 @@
             
             images.forEach(src => {
                 const img = new Image();
+                img.onload = () => console.log(`✓ Loaded: ${src}`);
+                img.onerror = () => console.error(`✗ Failed to load: ${src}`);
                 img.src = src;
             });
         }

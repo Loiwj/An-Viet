@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Ấn Việt Loading</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            padding: 20px;
+        }
+        .debug-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #333;
+            border-radius: 8px;
+        }
+        .success { color: #4CAF50; }
+        .error { color: #f44336; }
+        .warning { color: #ff9800; }
+        .debug-log {
+            background: #1a1a1a;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Debug - Ấn Việt Loading Issues</h1>
+    
+    <div class="debug-section">
+        <h2>📁 File Resources Check</h2>
+        <div id="resource-status"></div>
+    </div>
+    
+    <div class="debug-section">
+        <h2>🖼️ Images Loading Test</h2>
+        <div id="image-status"></div>
+        <div style="margin-top: 10px;">
+            <img id="logo-test" src="images/logo.png" alt="Logo Test" style="height: 60px; border: 1px solid #333;">
+        </div>
+    </div>
+    
+    <div class="debug-section">
+        <h2>🎨 CSS/Font Loading</h2>
+        <div id="css-status"></div>
+    </div>
+    
+    <div class="debug-section">
+        <h2>🌐 Network & CORS</h2>
+        <div id="network-status"></div>
+    </div>
+    
+    <div class="debug-section">
+        <h2>📱 Device Info</h2>
+        <div id="device-info"></div>
+    </div>
+    
+    <div class="debug-section">
+        <h2>📋 Console Logs</h2>
+        <div id="console-logs" class="debug-log"></div>
+    </div>
+
+    <script>
+        // Capture console logs
+        const originalLog = console.log;
+        const originalError = console.error;
+        const originalWarn = console.warn;
+        let logs = [];
+        
+        function addLog(type, message) {
+            logs.push(`[${type}] ${new Date().toLocaleTimeString()}: ${message}`);
+            updateConsoleDisplay();
+        }
+        
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            addLog('LOG', args.join(' '));
+        };
+        
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            addLog('ERROR', args.join(' '));
+        };
+        
+        console.warn = function(...args) {
+            originalWarn.apply(console, args);
+            addLog('WARN', args.join(' '));
+        };
+        
+        function updateConsoleDisplay() {
+            document.getElementById('console-logs').innerHTML = logs.join('\n');
+        }
+        
+        // Check resources
+        function checkResources() {
+            const resources = [
+                'images/logo.png',
+                'images/background1.png', 
+                'images/background2.png',
+                'stylesheet.css',
+                'index.html'
+            ];
+            
+            let html = '';
+            let checkedCount = 0;
+            
+            resources.forEach(resource => {
+                fetch(resource)
+                    .then(response => {
+                        if (response.ok) {
+                            html += `<div class="success">✓ ${resource} - OK (${response.status})</div>`;
+                        } else {
+                            html += `<div class="error">✗ ${resource} - Failed (${response.status})</div>`;
+                        }
+                    })
+                    .catch(error => {
+                        html += `<div class="error">✗ ${resource} - Error: ${error.message}</div>`;
+                    })
+                    .finally(() => {
+                        checkedCount++;
+                        if (checkedCount === resources.length) {
+                            document.getElementById('resource-status').innerHTML = html;
+                        }
+                    });
+            });
+        }
+        
+        // Test image loading
+        function testImageLoading() {
+            const img = document.getElementById('logo-test');
+            const statusDiv = document.getElementById('image-status');
+            
+            img.onload = function() {
+                statusDiv.innerHTML = '<div class="success">✓ Logo image loaded successfully</div>';
+            };
+            
+            img.onerror = function() {
+                statusDiv.innerHTML = '<div class="error">✗ Logo image failed to load</div>';
+            };
+            
+            // Force reload
+            img.src = img.src + '?t=' + Date.now();
+        }
+        
+        // Check CSS and fonts
+        function checkCSS() {
+            const statusDiv = document.getElementById('css-status');
+            let html = '';
+            
+            // Check if stylesheet is loaded
+            const stylesheets = document.styleSheets;
+            let cssFound = false;
+            
+            for (let sheet of stylesheets) {
+                try {
+                    if (sheet.href && sheet.href.includes('stylesheet.css')) {
+                        cssFound = true;
+                        html += '<div class="success">✓ stylesheet.css loaded</div>';
+                        break;
+                    }
+                } catch (e) {
+                    html += '<div class="warning">⚠ CORS issue with stylesheet</div>';
+                }
+            }
+            
+            if (!cssFound) {
+                html += '<div class="error">✗ stylesheet.css not found</div>';
+            }
+            
+            // Check Font Awesome
+            const faTest = document.createElement('i');
+            faTest.className = 'fas fa-home';
+            faTest.style.display = 'none';
+            document.body.appendChild(faTest);
+            
+            setTimeout(() => {
+                const computed = window.getComputedStyle(faTest, ':before');
+                if (computed.content !== 'none' && computed.content !== '') {
+                    html += '<div class="success">✓ Font Awesome loaded</div>';
+                } else {
+                    html += '<div class="error">✗ Font Awesome not loaded</div>';
+                }
+                document.body.removeChild(faTest);
+                statusDiv.innerHTML = html;
+            }, 1000);
+        }
+        
+        // Check network
+        function checkNetwork() {
+            const statusDiv = document.getElementById('network-status');
+            let html = '';
+            
+            // Check connection
+            html += `<div>Connection: ${navigator.onLine ? '<span class="success">Online</span>' : '<span class="error">Offline</span>'}</div>`;
+            
+            // Check protocol
+            html += `<div>Protocol: ${location.protocol}</div>`;
+            html += `<div>Host: ${location.host}</div>`;
+            html += `<div>Origin: ${location.origin}</div>`;
+            
+            statusDiv.innerHTML = html;
+        }
+        
+        // Device info
+        function showDeviceInfo() {
+            const statusDiv = document.getElementById('device-info');
+            const info = {
+                'User Agent': navigator.userAgent,
+                'Platform': navigator.platform,
+                'Language': navigator.language,
+                'Screen': `${screen.width}x${screen.height}`,
+                'Viewport': `${window.innerWidth}x${window.innerHeight}`,
+                'Cookies Enabled': navigator.cookieEnabled,
+                'Local Storage': typeof(Storage) !== "undefined"
+            };
+            
+            let html = '';
+            for (let [key, value] of Object.entries(info)) {
+                html += `<div><strong>${key}:</strong> ${value}</div>`;
+            }
+            
+            statusDiv.innerHTML = html;
+        }
+        
+        // Run all checks
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🔍 Starting debug checks...');
+            checkResources();
+            testImageLoading();
+            checkCSS();
+            checkNetwork();
+            showDeviceInfo();
+        });
+        
+        // Test loading screen functionality
+        setTimeout(() => {
+            console.log('🧪 Testing loading screen hide function...');
+            if (typeof hideLoadingScreen === 'function') {
+                console.log('✓ hideLoadingScreen function exists');
+            } else {
+                console.error('✗ hideLoadingScreen function not found');
+            }
+        }, 2000);
+    </script>
+</body>
+</html> 
