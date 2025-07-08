@@ -33,13 +33,25 @@
 .loading-logo {
     margin-bottom: 2rem;
     animation: logoFloat 3s ease-in-out infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .logo-loading {
-    height: 120px;
     width: auto;
     filter: drop-shadow(0 0 30px rgba(219, 184, 86, 0.5));
     animation: logoGlow 2s ease-in-out infinite alternate;
+    display: block;
+}
+
+.logo-loading:first-child {
+    height: 50px; /* Logo đầu tiên nhỏ hơn */
+}
+
+.logo-loading:nth-child(2) {
+    height: 250px; /* Logo thứ hai lớn hơn */
 }
 
 .logo-fallback {
@@ -104,16 +116,38 @@
     background: rgba(255, 255, 255, 0.1);
     border-radius: 2px;
     margin: 2rem auto 0;
-    overflow: hidden;
+    overflow: visible;
+    position: relative;
 }
 
 .progress-bar {
     height: 100%;
-    background: linear-gradient(90deg, #dbb856, #f4d03f);
+    background: #f99a18;
     border-radius: 2px;
     width: 0%;
     animation: progressLoad 3s ease-out forwards;
     box-shadow: 0 0 10px rgba(219, 184, 86, 0.5);
+}
+
+.keyword-load-indicator {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    transition: width 0.3s ease;
+    animation: keywordProgress 3s ease-out forwards;
+    pointer-events: none;
+}
+
+.keyword-load-icon {
+    position: absolute;
+    right: -8px;
+    top: -2px;
+    width: 16px;
+    height: 16px;
+    filter: drop-shadow(0 0 8px rgba(219, 184, 86, 0.8));
+    animation: keywordFloat 1.5s ease-in-out infinite alternate;
 }
 
 /* Loading Animations */
@@ -183,6 +217,35 @@
     }
 }
 
+@keyframes keywordProgress {
+    0% {
+        width: 0%;
+    }
+    25% {
+        width: 30%;
+    }
+    50% {
+        width: 60%;
+    }
+    75% {
+        width: 85%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes keywordFloat {
+    0% {
+        transform: translateY(0px) scale(1);
+        filter: drop-shadow(0 0 8px rgba(219, 184, 86, 0.8));
+    }
+    100% {
+        transform: translateY(-2px) scale(1.1);
+        filter: drop-shadow(0 0 12px rgba(219, 184, 86, 1));
+    }
+}
+
 body {
     font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
@@ -238,7 +301,7 @@ body {
 }
 
 .logo {
-    height: 70px;
+    height: 65px;
     width: auto;
     display: block;
 }
@@ -445,7 +508,8 @@ body {
 
 /* Main Content Section */
 .main-content {
-    background: url('images/background1.png') center/cover no-repeat;
+    background: url('images/BGW.png') center top/cover no-repeat;
+    background-attachment: fixed;
     min-height: 100vh;
     padding-top: 70px;
     position: relative;
@@ -546,7 +610,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 5px;
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -631,7 +695,25 @@ body {
 /* News Section */
 .news-section {
     padding: 6rem 0;
-    background: #0a0a0a;
+    background: url('images/BGW.png') center top/cover no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.news-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.news-section .container {
+    position: relative;
+    z-index: 2;
 }
 
 .section-title {
@@ -709,6 +791,107 @@ body {
     line-height: 1.6;
 }
 
+/* About Section (Giới Thiệu) */
+.about-section {
+    padding: 6rem 0;
+    background: #f5f2e8;
+    position: relative;
+}
+
+.about-category {
+    margin-bottom: 1rem;
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.category-title {
+    background: #4a1f1a;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    box-shadow: 0 4px 8px rgba(74, 31, 26, 0.3);
+}
+
+.view-all-link {
+    color: #8b4513;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.view-all-link:hover {
+    color: #4a1f1a;
+}
+
+.view-all-link span {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.view-all-link:hover span {
+    transform: translateX(3px);
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.category-item {
+    aspect-ratio: 4/3;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.category-item:hover {
+    transform: translateY(-5px);
+}
+
+.item-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #2a2a2a;
+    border: 3px solid #d4af37;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.item-image-placeholder::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background: rgba(212, 175, 55, 0.3);
+    border-radius: 50%;
+}
+
+.category-description {
+    color: #4a1f1a;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: left;
+    margin: 0;
+    line-height: 1.5;
+}
+
 
 /* Contact Section */
 .contact {
@@ -754,6 +937,15 @@ body {
     flex-shrink: 0;
     width: 40px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-icon img {
+    width: auto;
+    height: 32px;
+    margin-top: 2px;
 }
 
 .contact-details {
@@ -934,7 +1126,7 @@ body {
 }
 
 .footer-logo {
-    height: 50px;
+    height: 80px;
     width: auto;
     margin-bottom: 1rem;
 }
@@ -970,6 +1162,18 @@ body {
     text-decoration: none;
     font-weight: 300;
     transition: color 0.3s ease;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.4;
+}
+
+.footer-column a img {
+    width: auto;
+    height: 16px;
+    vertical-align: middle;
+    margin-top: 2px;
+    flex-shrink: 0;
 }
 
 .footer-column a:hover {
@@ -1069,7 +1273,7 @@ body {
     }
 
     .logo {
-        height: 60px;
+        height: 50px;
     }
 
     .main-content .container {
@@ -1110,6 +1314,16 @@ body {
         flex-shrink: 0;
         width: 30px;
         text-align: center;
+    }
+    
+    .contact-icon img {
+        height: 24px;
+        margin-top: 1px;
+    }
+    
+    .footer-column a img {
+        height: 14px;
+        margin-top: 1px;
     }
     
     .contact-details {
@@ -1154,6 +1368,37 @@ body {
         font-size: 1rem;
         gap: 10px;
     }
+    
+    /* Background optimization for mobile */
+    .main-content,
+    .news-section {
+        background-attachment: scroll;
+    }
+    
+    /* About Section Responsive */
+    .about-section {
+        padding: 4rem 0;
+    }
+    
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .category-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .category-title {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+    
+    .view-all-link {
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1162,7 +1407,7 @@ body {
     }
 
     .logo {
-        height: 50px;
+        height: 45px;
     }
 
     .search-box {
@@ -1245,6 +1490,16 @@ body {
         margin-top: 2px;
     }
     
+    .contact-icon img {
+        height: 20px;
+        margin-top: 1px;
+    }
+    
+    .footer-column a img {
+        height: 12px;
+        margin-top: 1px;
+    }
+    
     .contact-details h4 {
         font-size: 0.9rem;
         margin-bottom: 0.3rem;
@@ -1290,12 +1545,32 @@ body {
     }
     
     /* Loading Screen Responsive */
-    .logo-loading {
-        height: 80px;
+    .logo-loading:first-child {
+        height: 35px; /* Logo đầu tiên nhỏ hơn trên mobile */
+    }
+    
+    .logo-loading:nth-child(2) {
+        height: 120px; /* Logo thứ hai vừa phải trên mobile */
+    }
+    
+    .loading-logo {
+        gap: 15px; /* Khoảng cách nhỏ hơn trên mobile */
     }
     
     .logo-fallback {
-        height: 80px;
+        height: 60px;
+    }
+    
+    .logo-loading:first-child {
+        height: 30px; /* Logo đầu tiên nhỏ hơn trên mobile nhỏ */
+    }
+    
+    .logo-loading:nth-child(2) {
+        height: 100px; /* Logo thứ hai vừa phải trên mobile nhỏ */
+    }
+    
+    .loading-logo {
+        gap: 12px; /* Khoảng cách nhỏ hơn trên mobile nhỏ */
     }
     
     .fallback-text {
@@ -1314,6 +1589,34 @@ body {
     
     .loading-progress {
         width: 250px;
+    }
+    
+    .keyword-load-icon {
+        width: 12px;
+        height: 12px;
+        right: -6px;
+        top: -1px;
+    }
+    
+    /* Background optimization for small mobile */
+    .main-content,
+    .news-section {
+        background-attachment: scroll;
+        background-size: cover;
+    }
+    
+    /* About Section Small Mobile */
+    .about-section {
+        padding: 3rem 0;
+    }
+    
+    .category-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+    }
+    
+    .category-description {
+        font-size: 1rem;
     }
     
     .spinner {
@@ -1472,6 +1775,57 @@ body {
     .main-content {
         padding-top: 60px;
     }
+    
+    /* Loading Screen for extra small devices */
+    .logo-loading:first-child {
+        height: 25px; /* Logo đầu tiên rất nhỏ trên mobile cực nhỏ */
+    }
+    
+    .logo-loading:nth-child(2) {
+        height: 80px; /* Logo thứ hai vừa phải trên mobile cực nhỏ */
+    }
+    
+    .loading-logo {
+        gap: 10px; /* Khoảng cách rất nhỏ trên mobile cực nhỏ */
+    }
+    
+    .keyword-load-icon {
+        width: 10px;
+        height: 10px;
+        right: -5px;
+        top: -1px;
+    }
+    
+    /* Background optimization for extra small devices */
+    .main-content,
+    .news-section {
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center center;
+    }
+    
+    /* About Section Extra Small */
+    .about-section {
+        padding: 2rem 0;
+    }
+    
+    .category-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+    
+    .category-title {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+    
+    .view-all-link {
+        font-size: 0.8rem;
+    }
+    
+    .category-description {
+        font-size: 0.9rem;
+    }
 }
 
 /* iPhone SE Portrait specific */
@@ -1496,12 +1850,65 @@ body {
     }
     
     .logo {
-        height: 40px;
+        height: 35px;
     }
     
     .nav {
         padding: 0 8px;
         gap: 6px;
+    }
+    
+    /* Loading Screen for iPhone SE Portrait */
+    .logo-loading:first-child {
+        height: 22px; /* Logo đầu tiên rất nhỏ trên iPhone SE */
+    }
+    
+    .logo-loading:nth-child(2) {
+        height: 70px; /* Logo thứ hai vừa phải trên iPhone SE */
+    }
+    
+    .loading-logo {
+        gap: 8px; /* Khoảng cách rất nhỏ trên iPhone SE */
+    }
+    
+    /* About Section iPhone SE */
+    .about-section {
+        padding: 1.5rem 0;
+    }
+    
+    .category-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.4rem;
+    }
+    
+    .category-title {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+    
+    .view-all-link {
+        font-size: 0.75rem;
+    }
+    
+    .category-description {
+        font-size: 0.85rem;
+    }
+    
+    .contact-icon img {
+        height: 18px;
+        margin-top: 1px;
+    }
+    
+    .footer-column a img {
+        height: 11px;
+        margin-top: 1px;
+    }
+    
+    .keyword-load-icon {
+        width: 8px;
+        height: 8px;
+        right: -4px;
+        top: 0px;
     }
 }
 
@@ -1545,7 +1952,7 @@ body {
     right: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     z-index: 1000;
 }
 
@@ -1617,7 +2024,7 @@ body {
     .download-badges {
         bottom: 15px;
         right: 15px;
-        gap: 8px;
+        gap: 5px;
     }
     
     .badge-content {

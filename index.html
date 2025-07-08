@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -15,20 +16,14 @@
     <div id="loading-screen" class="loading-screen">
         <div class="loading-content">
             <div class="loading-logo">
-                <img src="images/logo.png" alt="Ấn Việt Logo" class="logo-loading" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <div class="logo-fallback" style="display: none;">
-                    <div class="fallback-text">ẤN VIỆT</div>
-                </div>
-            </div>
-            <div class="loading-text">
-                <h2>Ấn Việt</h2>
-                <p>Thất Ấn Khởi Nguyên</p>
-            </div>
-            <div class="loading-spinner">
-                <div class="spinner"></div>
+                <img src="images/logodautrang.png" alt="Ấn Việt Logo 1" class="logo-loading" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <img src="images/logo.png" alt="Ấn Việt Logo 2" class="logo-loading" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             </div>
             <div class="loading-progress">
                 <div class="progress-bar"></div>
+                <div class="keyword-load-indicator">
+                    <img src="images/keywordload.png" alt="Loading indicator" class="keyword-load-icon">
+                </div>
             </div>
         </div>
     </div>
@@ -51,12 +46,12 @@
                 <li class="nav-item">
                     <a href="#about">GIỚI THIỆU</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="#guide">HƯỚNG DẪN</a>
                 </li>
                 <li class="nav-item">
                     <a href="#community">CỘNG ĐỒNG</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a href="#contact">HỖ TRỢ</a>
                 </li>
@@ -121,7 +116,7 @@
                 <!-- Action Button -->
                 <div class="action-section">
                     <button class="btn btn-action">Xem thêm 
-                        <img src="images/muiten_xemthem.png" alt="search" style=" height: 20px;">
+                        <img src="images/muiten_xemthem.png" alt="search" style=" height: 10px;">
                     </button>
                 </div>
             
@@ -166,6 +161,59 @@
         </div>
     </section>
 
+    <!-- About Section (Giới Thiệu) -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">GIỚI THIỆU</h2>
+            
+            <!-- Characters Section -->
+            <div class="about-category">
+                <div class="category-header">
+                    <h3 class="category-title">Nhân vật</h3>
+                    <a href="#" class="view-all-link">Xem tất cả nhân vật <span>></span></a>
+                </div>
+                <div class="category-grid">
+                    <div class="category-item">
+                        <div class="item-image-placeholder"></div>
+                    </div>
+                    <div class="category-item">
+                        <div class="item-image-placeholder"></div>
+                    </div>
+                    <div class="category-item">
+                        <div class="item-image-placeholder"></div>
+                    </div>
+                    <div class="category-item">
+                        <div class="item-image-placeholder"></div>
+                    </div>
+                </div>
+                <p class="category-description">Bạn đã sẵn sàng đánh BOSS chưa?</p>
+            </div>
+
+            <!-- Maps Section -->
+            <div class="about-category">
+                <div class="category-header">
+                    <h3 class="category-title">Bản đồ</h3>
+                    <a href="#" class="view-all-link">Xem tất cả các bản đồ <span>></span></a>
+                </div>
+                <div class="category-grid">
+                    <div class="category-item">
+                        <div class="item-image-placeholder"></div>
+                    </div>
+                    <div class="category-item">
+                        <div class="item-image-placeholder"></div>
+                    </div>
+                    <div class="category-item">
+                        <div class="item-image-placeholder"></div>
+                    </div>
+                    <div class="category-item">
+                        <div class="item-image-placeholder"></div>
+                    </div>
+                </div>
+                <p class="category-description">Cùng phiêu lưu đến các chặng đường kì ảo thôi!</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Download Badges -->
     <div class="download-badges">
         <a href="#" class="app-store-badge">
@@ -198,40 +246,37 @@
        <!-- Contact Section -->
        <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Liên Hệ Với Chúng Tôi</h2>
+            <h2 class="section-title">Liên Hệ Và Hỗ Trợ</h2>
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Thông Tin Liên Hệ</h3>
                     <div class="contact-item">
-                        <span class="contact-icon">📧</span>
+                        <span class="contact-icon"><img src="images/mail.png" alt="mail"></span>
                         <div class="contact-details">
                             <h4>Email</h4>
-                            <p>support@anviet.vn</p>
-                            <p>business@anviet.vn</p>
+                            <p>anviett@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <span class="contact-icon">📞</span>
+                        <span class="contact-icon"><img src="images/phone.png" alt="phone"></span>
                         <div class="contact-details">
                             <h4>Hotline</h4>
-                            <p>1900 8888 (24/7)</p>
-                            <p>028 3888 9999</p>
+                            <p>0399607726</p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <span class="contact-icon">📍</span>
+                        <span class="contact-icon"><img src="images/live.png" alt="location"></span>
                         <div class="contact-details">
                             <h4>Địa Chỉ</h4>
-                            <p>Tầng 10, Tòa nhà ABC</p>
-                            <p>123 Đường XYZ, Quận 1, TP.HCM</p>
+                            <p>49A, Khu vực Thạnh Huề, Phường Thường Thạnh </p>
+                            <p>Quận Cái Răng, TP. Cần Thơ.</p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <span class="contact-icon">🕐</span>
+                        <span class="contact-icon"><img src="images/time.png" alt="clock"></span>
                         <div class="contact-details">
                             <h4>Giờ Làm Việc</h4>
                             <p>Thứ 2 - Thứ 6: 8:00 - 18:00</p>
-                            <p>Thứ 7 - Chủ Nhật: 9:00 - 17:00</p>
                         </div>
                     </div>
                 </div>
@@ -278,9 +323,12 @@
                     <div class="footer-column">
                         <h4>Sản Phẩm</h4>
                         <ul>
-                            <li><a href="#">Ấn Việt - Thất Ấn Khởi Nguyên</a></li>
-                            <li><a href="#">Game khác</a></li>
+                            <li><a href="#">2D Artist</a></li>
+                            <li><a href="#">Graphic / Promo Designer</a></li>
+                            <li><a href="#">Lead 3D Animator</a></li>
+                            <li><a href="#">Ilustrator 2D</a></li>
                         </ul>
+
                     </div>
                     <div class="footer-column">
                         <h4>Hỗ Trợ</h4>
@@ -293,8 +341,9 @@
                     <div class="footer-column">
                         <h4>Liên Hệ</h4>
                         <ul>
-                            <li><a href="#">📧 support@anviet.vn</a></li>
-                            <li><a href="#">📞 1900 8888</a></li>
+                            <li><a href="#"><img src="images/mail.png" alt="mail">anviett@gmail.com</a></li>
+                            <li><a href="#"><img src="images/phone.png" alt="phone">0399607726</a></li>
+                            <li><a href="#"><img src="images/live.png" alt="location">49A, Khu vực Thạnh Huề, Phường Thường Thạnh, Quận Cái Răng, TP. Cần Thơ. </a></li>
                         </ul>
                     </div>
                 </div>
@@ -334,8 +383,7 @@
         function preloadImages() {
             const images = [
                 'images/logo.png',
-                'images/background1.png',
-                'images/background2.png'
+                'images/BGW.png'
             ];
             
             images.forEach(src => {
@@ -375,6 +423,7 @@
         // Loading progress simulation
         document.addEventListener('DOMContentLoaded', function() {
             const progressBar = document.querySelector('.progress-bar');
+            const keywordIndicator = document.querySelector('.keyword-load-indicator');
             
             // Simulate realistic loading progress
             let progress = 0;
@@ -383,6 +432,9 @@
                 if (progress > 100) progress = 100;
                 
                 progressBar.style.width = progress + '%';
+                if (keywordIndicator) {
+                    keywordIndicator.style.width = progress + '%';
+                }
                 
                 if (progress >= 100) {
                     clearInterval(interval);
@@ -403,6 +455,12 @@
                 content: "Cập nhật tin tức mới nhất về game và các sự kiện đặc biệt",
                 section: "news",
                 keywords: ["tin tức", "sự kiện", "update", "cập nhật", "event"]
+            },
+            {
+                title: "Giới thiệu",
+                content: "Tìm hiểu về nhân vật và bản đồ trong game, khám phá thế giới Ấn Việt",
+                section: "about",
+                keywords: ["giới thiệu", "nhân vật", "bản đồ", "characters", "maps", "about"]
             },
             {
                 title: "Hỗ trợ khách hàng",
