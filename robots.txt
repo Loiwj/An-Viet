@@ -1,0 +1,33 @@
+# Robots.txt for anviet.vn
+# Hướng dẫn cho search engine bot
+
+User-agent: *
+Allow: /
+
+# Cho phép tất cả bot truy cập
+Allow: /index.html
+Allow: /images/
+Allow: /stylesheet.css
+
+# Chặn một số file không cần thiết cho SEO
+Disallow: /debug.html
+
+# Sitemap location
+Sitemap: https://anviet.vn/sitemap.xml
+
+# Crawl-delay để tránh quá tải server
+Crawl-delay: 1
+
+# Google bot specific
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing bot specific  
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Facebook bot cho social sharing
+User-agent: facebookexternalhit
+Allow: / 

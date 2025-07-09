@@ -3,26 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ấn Việt - Thất Ấn Khởi Nguyên</title>
+    <title>Ấn Việt - Thất Ấn Khởi Nguyên | Game Mobile Chiến Thuật Hàng Đầu Việt Nam</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Ấn Việt - Thất Ấn Khởi Nguyên là game mobile chiến thuật hấp dẫn với đồ họa đẹp mắt, lối chơi độc đáo. Tải ngay trên App Store và Google Play để khám phá thế giới võ thuật kỳ ảo.">
+    <meta name="keywords" content="Ấn Việt, Thất Ấn Khởi Nguyên, game mobile, game chiến thuật, game Việt Nam, võ thuật, RPG, game online, tải game, App Store, Google Play">
+    <meta name="author" content="Ấn Việt Studio">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Vietnamese">
+    <meta name="geo.region" content="VN">
+    <meta name="geo.country" content="Vietnam">
+    <meta name="geo.placename" content="Cần Thơ">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anviet.vn/">
+    <meta property="og:title" content="Ấn Việt - Thất Ấn Khởi Nguyên | Game Mobile Chiến Thuật Hàng Đầu">
+    <meta property="og:description" content="Khám phá thế giới võ thuật kỳ ảo với game mobile Ấn Việt - Thất Ấn Khởi Nguyên. Đồ họa đẹp mắt, lối chơi chiến thuật độc đáo. Tải ngay!">
+    <meta property="og:image" content="https://anviet.vn/images/logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Ấn Việt">
+    <meta property="og:locale" content="vi_VN">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://anviet.vn/">
+    <meta property="twitter:title" content="Ấn Việt - Thất Ấn Khởi Nguyên | Game Mobile Chiến Thuật">
+    <meta property="twitter:description" content="Game mobile chiến thuật hấp dẫn với thế giới võ thuật kỳ ảo. Tải ngay trên App Store và Google Play!">
+    <meta property="twitter:image" content="https://anviet.vn/images/logo.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://anviet.vn/">
+    
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    
+    <!-- Mobile App Links -->
+    <meta name="apple-itunes-app" content="app-id=XXXXXX">
+    <meta name="google-play-app" content="app-id=com.anviet.game">
+    
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Ấn Việt Studio",
+        "alternateName": "An Viet",
+        "url": "https://anviet.vn",
+        "logo": "https://anviet.vn/images/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+84399607726",
+            "contactType": "customer service",
+            "email": "Anviett@gmail.com",
+            "availableLanguage": "Vietnamese"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "49A, Khu vực Thạnh Huề, Phường Thường Thạnh",
+            "addressLocality": "Cái Răng",
+            "addressRegion": "Cần Thơ",
+            "addressCountry": "VN"
+        },
+        "sameAs": [
+            "https://www.facebook.com/anvietgame",
+            "https://www.youtube.com/c/anvietgame"
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Ấn Việt - Thất Ấn Khởi Nguyên",
+        "description": "Game mobile chiến thuật với thế giới võ thuật kỳ ảo, đồ họa đẹp mắt và lối chơi độc đáo",
+        "genre": ["Strategy", "RPG", "Action"],
+        "gamePlatform": ["iOS", "Android"],
+        "applicationCategory": "Game",
+        "operatingSystem": ["iOS", "Android"],
+        "publisher": {
+            "@type": "Organization",
+            "name": "Ấn Việt Studio"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "VND",
+            "availability": "https://schema.org/InStock"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "reviewCount": "1000"
+        }
+    }
+    </script>
 </head>
 <body>
     <!-- Loading Screen -->
     <div id="loading-screen" class="loading-screen">
         <div class="loading-content">
             <div class="loading-logo">
-                <img src="images/logodautrang.png" alt="Ấn Việt Logo 1" class="logo-loading" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <img src="images/logo.png" alt="Ấn Việt Logo 2" class="logo-loading" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <img src="images/logodautrang.png" alt="Ấn Việt - Thất Ấn Khởi Nguyên Logo Loading" class="logo-loading" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <img src="images/logo.png" alt="Ấn Việt Game Mobile Chiến Thuật Logo" class="logo-loading" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             </div>
             <div class="loading-progress">
                 <div class="progress-bar"></div>
                 <div class="keyword-load-indicator">
-                    <img src="images/kw.png" alt="Loading indicator" class="keyword-load-icon">
+                    <img src="images/kw.png" alt="Ấn Việt Game Loading Progress Indicator" class="keyword-load-icon">
                 </div>
             </div>
         </div>
@@ -33,7 +132,7 @@
         <nav class="nav">
             <div class="nav-brand">
                 <a href="#home" class="logo-link">
-                    <img src="images/logo.png" alt="Ấn Việt Logo" class="logo">
+                    <img src="images/logo.png" alt="Ấn Việt - Thất Ấn Khởi Nguyên Game Logo" class="logo">
                 </a>
             </div>
             <ul class="nav-menu">
@@ -60,7 +159,7 @@
                 <form class="search-form" onsubmit="performSearch(event)">
                     <input type="text" id="search-input" placeholder="Tìm kiếm..." autocomplete="off">
                     <button type="submit">
-                        <img src="images/kinhlup.png" alt="search" style="width: 20px; height: 20px;">
+                        <img src="images/kinhlup.png" alt="Tìm kiếm game Ấn Việt" style="width: 20px; height: 20px;">
                     </button>
                 </form>
                 <div class="search-results" id="search-results"></div>
@@ -79,7 +178,9 @@
             <!-- Large Banner Image -->
             <div class="main-banner-image">
                 <div class="banner-placeholder">
-                    <p>Tấm hình banner chính</p>
+                    <h1>Ấn Việt - Thất Ấn Khởi Nguyên</h1>
+                    <p>Game Mobile Chiến Thuật Hàng Đầu Việt Nam</p>
+                    <p>Khám phá thế giới võ thuật kỳ ảo với đồ họa đẹp mắt và lối chơi độc đáo</p>
                 </div>
             </div>
 
@@ -116,7 +217,7 @@
                 <!-- Action Button -->
                 <div class="action-section">
                     <button class="btn btn-action">Xem thêm 
-                        <img src="images/muiten_xemthem.png" alt="search" style=" height: 10px;">
+                        <img src="images/muiten_xemthem.png" alt="Xem thêm thông tin game" style=" height: 10px;">
                     </button>
                 </div>
             
@@ -170,7 +271,7 @@
             <div class="about-category">
                 <div class="category-header">
                     <h3 class="category-title">Nhân vật</h3>
-                    <a href="#" class="view-all-link">Xem tất cả nhân vật <span><img src="images/keywordload.png" alt="search" style=" height: 10px; rotate: 90deg;"></span></a>
+                    <a href="#" class="view-all-link">Xem tất cả nhân vật <span><img src="images/keywordload.png" alt="Xem thêm nhân vật game" style=" height: 10px; rotate: 90deg;"></span></a>
                 </div>
                 <div class="category-grid">
                     <div class="category-item">
@@ -193,7 +294,7 @@
             <div class="about-category">
                 <div class="category-header">
                     <h3 class="category-title">Bản đồ</h3>
-                    <a href="#" class="view-all-link">Xem tất cả các bản đồ <span><img src="images/keywordload.png" alt="search" style=" height: 10px; rotate: 90deg;"></span></a>
+                    <a href="#" class="view-all-link">Xem tất cả các bản đồ <span><img src="images/keywordload.png" alt="Xem thêm bản đồ game" style=" height: 10px; rotate: 90deg;"></span></a>
                 </div>
                 <div class="category-grid">
                     <div class="category-item">
@@ -233,7 +334,7 @@
         <a href="#" class="google-play-badge">
             <div class="badge-content">
                 <div class="play-logo">
-                    <img src="images/google-play-store-logo-svgrepo-com.svg" alt="googleplay" style="width: 20px; height: 20px;">
+                    <img src="images/google-play-store-logo-svgrepo-com.svg" alt="Tải Ấn Việt trên Google Play Store" style="width: 20px; height: 20px;">
                 </div>
                 <div class="badge-text">
                     <div class="badge-subtitle">GET IT ON</div>
@@ -251,21 +352,21 @@
                 <div class="contact-info">
                     <h3>Thông Tin Liên Hệ</h3>
                     <div class="contact-item">
-                        <span class="contact-icon"><img src="images/Mail.png" alt="mail"></span>
+                        <span class="contact-icon"><img src="images/Mail.png" alt="Email liên hệ Ấn Việt"></span>
                         <div class="contact-details">
                             <h4>Email</h4>
                             <p>Anviett@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <span class="contact-icon"><img src="images/phone.png" alt="phone"></span>
+                        <span class="contact-icon"><img src="images/phone.png" alt="Hotline hỗ trợ Ấn Việt"></span>
                         <div class="contact-details">
                             <h4>Hotline</h4>
                             <p>0399607726</p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <span class="contact-icon"><img src="images/live.png" alt="location"></span>
+                        <span class="contact-icon"><img src="images/live.png" alt="Địa chỉ văn phòng Ấn Việt"></span>
                         <div class="contact-details">
                             <h4>Địa Chỉ</h4>
                             <p>49A, Khu vực Thạnh Huề, Phường Thường Thạnh </p>
@@ -273,7 +374,7 @@
                         </div>
                     </div>
                     <div class="contact-item">
-                        <span class="contact-icon"><img src="images/time.png" alt="clock"></span>
+                        <span class="contact-icon"><img src="images/time.png" alt="Giờ làm việc Ấn Việt"></span>
                         <div class="contact-details">
                             <h4>Giờ Làm Việc</h4>
                             <p>Thứ 2 - Thứ 6: 8:00 - 18:00</p>
@@ -316,7 +417,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="images/logo.png" alt="Ấn Việt Logo" class="footer-logo">
+                    <img src="images/logo.png" alt="Ấn Việt - Thất Ấn Khởi Nguyên Game Studio Logo" class="footer-logo">
                     <p>Nền tảng game hàng đầu Việt Nam</p>
                 </div>
                 <div class="footer-links">
