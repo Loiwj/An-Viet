@@ -13,7 +13,7 @@ Allow: /stylesheet.css
 Disallow: /debug.html
 
 # Sitemap location
-Sitemap: https://anviet.vn/sitemap.xml
+Sitemap: https://anviet.click/sitemap.xml
 
 # Crawl-delay để tránh quá tải server
 Crawl-delay: 1
