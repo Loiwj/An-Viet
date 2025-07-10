@@ -1405,6 +1405,12 @@ body {
         bottom: -6px;
         left: -8px;
     }
+    
+    .about-section .section-title::after {
+        width: 30%;
+        height: 2px;
+        left: 6px;
+    }
 
     .download-content h2 {
         font-size: 2rem;
@@ -1668,6 +1674,12 @@ body {
         left: -7px;
     }
     
+    .about-section .section-title::after {
+        width: 40%;
+        height: 2px;
+        left: 5px;
+    }
+    
     .category-grid {
         grid-template-columns: 1fr 1fr;
         gap: 0.8rem;
@@ -1878,6 +1890,12 @@ body {
         left: -6px;
     }
     
+    .about-section .section-title::after {
+        width: 50%;
+        height: 1.5px;
+        left: 4px;
+    }
+    
     .category-grid {
         grid-template-columns: 1fr 1fr;
         gap: 0.5rem;
@@ -1954,6 +1972,12 @@ body {
         height: 10px;
         bottom: -3px;
         left: -5px;
+    }
+    
+    .about-section .section-title::after {
+        width: 60%;
+        height: 1px;
+        left: 3px;
     }
     
     .category-grid {
