@@ -48,6 +48,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="apple-touch-icon" href="images/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -115,13 +116,13 @@
     <div id="loading-screen" class="loading-screen">
         <div class="loading-content">
             <div class="loading-logo">
-                <img src="images/logodautrang.png" alt="Ấn Việt - Thất Ấn Khởi Nguyên Logo Loading" class="logo-loading" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <img src="images/logo.png" alt="Ấn Việt Game Mobile Chiến Thuật Logo" class="logo-loading" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <img src="images/logo_bia.png" alt="Ấn Việt - Thất Ấn Khởi Nguyên Logo Loading" class="logo-loading" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                
             </div>
             <div class="loading-progress">
                 <div class="progress-bar"></div>
                 <div class="keyword-load-indicator">
-                    <img src="images/kw.png" alt="Ấn Việt Game Loading Progress Indicator" class="keyword-load-icon">
+                    
                 </div>
             </div>
         </div>
@@ -132,7 +133,7 @@
         <nav class="nav">
             <div class="nav-brand">
                 <a href="#home" class="logo-link">
-                    <img src="images/logo.png" alt="Ấn Việt - Thất Ấn Khởi Nguyên Game Logo" class="logo">
+                    <img src="images/logo_biatrang.png" alt="Ấn Việt - Thất Ấn Khởi Nguyên Game Logo" class="logo">
                 </a>
             </div>
             <ul class="nav-menu">
@@ -140,17 +141,8 @@
                     <a href="#home">TRANG CHỦ</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#news">TIN TỨC</a>
+                    <a href="#product">SẢN PHẨM</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#about">GIỚI THIỆU</a>
-                </li>
-                <!-- <li class="nav-item">
-                    <a href="#guide">HƯỚNG DẪN</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#community">CỘNG ĐỒNG</a>
-                </li> -->
                 <li class="nav-item">
                     <a href="#contact">HỖ TRỢ</a>
                 </li>
@@ -174,143 +166,38 @@
 
     <!-- Main Content Section -->
     <section id="home" class="main-content">
-        <div class="container">
-            <!-- Large Banner Image -->
-            <div class="main-banner-image">
-                <div class="banner-placeholder">
-                    <h1>Ấn Việt - Thất Ấn Khởi Nguyên</h1>
-                    <p>Game Mobile Chiến Thuật Hàng Đầu Việt Nam</p>
-                    <p>Khám phá thế giới võ thuật kỳ ảo với đồ họa đẹp mắt và lối chơi độc đáo</p>
-                </div>
+        <!-- Image Container -->
+        <div class="image-container">
+            <div class="image-placeholder-main">
+                Khung chèn hình - Sẽ được thay thế sau
             </div>
-
-            <!-- Content Grid
-            <div class="content-grid-section">
-                <div class="grid-row">
-                    <div class="content-box">
-                        <div class="box-header">
-                            <h3>Nội dung 1</h3>
-                        </div>
-                        <div class="box-content">
-                            <p>Vùng nội dung để chèn thông tin</p>
-                        </div>
-                    </div>
-                    <div class="content-box">
-                        <div class="box-header">
-                            <h3>Nội dung 2</h3>
-                        </div>
-                        <div class="box-content">
-                            <p>Vùng nội dung để chèn thông tin</p>
-                        </div>
-                    </div>
-                    <div class="content-box">
-                        <div class="box-header">
-                            <h3>Nội dung 3</h3>
-                        </div>
-                        <div class="box-content">
-                            <p>Vùng nội dung để chèn thông tin</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-                <!-- Action Button -->
-                <div class="action-section">
-                    <button class="btn btn-action">Xem thêm 
-                        <img src="images/muiten_xemthem.png" alt="Xem thêm thông tin game" style=" height: 10px;">
-                    </button>
-                </div>
-            
-    </section>
-
-    <!-- News & Events Section -->
-    <section id="news" class="news-section">
-        <div class="container">
-            <h2 class="section-title">Tin Tức & Sự Kiện</h2>
-            <div class="news-grid">
-                <article class="news-card">
-                    <div class="news-image">
-                        <div class="image-placeholder">📰</div>
-                    </div>
-                    <div class="news-content">
-                        <h3>Tiêu đề tin tức 1</h3>
-                        <p class="news-date">25/12/2024</p>
-                        <p class="news-excerpt">Mô tả ngắn gọn về tin tức...</p>
-                    </div>
-                </article>
-                <article class="news-card">
-                    <div class="news-image">
-                        <div class="image-placeholder">🎉</div>
-                    </div>
-                    <div class="news-content">
-                        <h3>Tiêu đề tin tức 2</h3>
-                        <p class="news-date">22/12/2024</p>
-                        <p class="news-excerpt">Mô tả ngắn gọn về tin tức...</p>
-                    </div>
-                </article>
-                <article class="news-card">
-                    <div class="news-image">
-                        <div class="image-placeholder">🏆</div>
-                    </div>
-                    <div class="news-content">
-                        <h3>Tiêu đề tin tức 3</h3>
-                        <p class="news-date">20/12/2024</p>
-                        <p class="news-excerpt">Mô tả ngắn gọn về tin tức...</p>
-                    </div>
-                </article>
-            </div>
+        </div>
+        
+        <!-- Action Button -->
+        <div class="container" style="text-align: center; margin-top: 2rem;">
+            <button class="btn btn-action">Xem thêm 
+                <img src="images/muitenxemthem_index.png" alt="Xem thêm thông tin game" style="height: 10px; width: 30px;">
+            </button>
         </div>
     </section>
 
-    <!-- About Section (Giới Thiệu) -->
-    <section id="about" class="about-section">
+    <!-- Product Section -->
+    <section id="product" class="product-section">
         <div class="container">
-            <h2 class="section-title">Giới Thiệu</h2>
-            
-            <!-- Characters Section -->
-            <div class="about-category">
-                <div class="category-header">
-                    <h3 class="category-title">Nhân vật</h3>
-                    <a href="#" class="view-all-link">Xem tất cả nhân vật <span><img src="images/keywordload.png" alt="Xem thêm nhân vật game" style=" height: 10px; rotate: 90deg;"></span></a>
-                </div>
-                <div class="category-grid">
-                    <div class="category-item">
-                        <div class="item-image-placeholder"></div>
-                    </div>
-                    <div class="category-item">
-                        <div class="item-image-placeholder"></div>
-                    </div>
-                    <div class="category-item">
-                        <div class="item-image-placeholder"></div>
-                    </div>
-                    <div class="category-item">
-                        <div class="item-image-placeholder"></div>
+            <h2 class="section-title">SẢN PHẨM</h2>
+            <img src="images/paten.png" alt="">
+            <div class="product-container">
+                <div class="product-image-box">
+                    <div class="product-placeholder">
+                        Khung sản phẩm - Sẽ được thay thế sau
                     </div>
                 </div>
-                <p class="category-description">Bạn đã sẵn sàng đánh BOSS chưa?</p>
+                
             </div>
-
-            <!-- Maps Section -->
-            <div class="about-category">
-                <div class="category-header">
-                    <h3 class="category-title">Bản đồ</h3>
-                    <a href="#" class="view-all-link">Xem tất cả các bản đồ <span><img src="images/keywordload.png" alt="Xem thêm bản đồ game" style=" height: 10px; rotate: 90deg;"></span></a>
-                </div>
-                <div class="category-grid">
-                    <div class="category-item">
-                        <div class="item-image-placeholder"></div>
-                    </div>
-                    <div class="category-item">
-                        <div class="item-image-placeholder"></div>
-                    </div>
-                    <div class="category-item">
-                        <div class="item-image-placeholder"></div>
-                    </div>
-                    <div class="category-item">
-                        <div class="item-image-placeholder"></div>
-                    </div>
-                </div>
-                <p class="category-description">Cùng phiêu lưu đến các chặng đường kỳ ảo thôi!</p>
+            <div class="product-details-btn">
+                <a href="game.html" class="btn-details">Xem thêm chi tiết 
+                    <img src="images/muitenxemchitiet_index.png" alt="Xem chi tiết sản phẩm" style="height: 10px;">
+                </a>
             </div>
         </div>
     </section>
@@ -417,7 +304,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="images/logo.png" alt="Ấn Việt - Thất Ấn Khởi Nguyên Game Studio Logo" class="footer-logo">
+                    <img src="images/logo_biatrang.png" alt="Ấn Việt - Thất Ấn Khởi Nguyên Game Studio Logo" class="footer-logo">
                     <p>Nền tảng game hàng đầu Việt Nam</p>
                 </div>
                 <div class="footer-links">
@@ -543,6 +430,54 @@
             }, 200);
         });
 
+        // Header scroll effect
+        function handleHeaderScroll() {
+            const header = document.querySelector('.header');
+            const videoBanner = document.querySelector('.main-banner-video');
+            
+            if (!header || !videoBanner) return;
+            
+            const videoBannerHeight = videoBanner.offsetHeight;
+            const scrollPosition = window.scrollY;
+            const threshold = videoBannerHeight - 150; // Khoảng cách để bắt đầu thay đổi
+            
+            if (scrollPosition > threshold) {
+                // Khi scroll qua video banner
+                header.classList.add('scrolled');
+            } else {
+                // Khi ở phần video banner
+                header.classList.remove('scrolled');
+            }
+        }
+
+        // Scroll to next section function
+        function scrollToNextSection() {
+            const productSection = document.getElementById('product');
+            if (productSection) {
+                productSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Throttle function để tối ưu performance
+        function throttle(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Add scroll event listener for header effect with throttle
+        window.addEventListener('scroll', throttle(handleHeaderScroll, 10));
+        window.addEventListener('load', handleHeaderScroll);
+
         // Search functionality
         const searchData = [
             {
@@ -552,16 +487,10 @@
                 keywords: ["game", "mobile", "chiến thuật", "ấn việt", "thất ấn khởi nguyên"]
             },
             {
-                title: "Tin tức & Sự kiện",
-                content: "Cập nhật tin tức mới nhất về game và các sự kiện đặc biệt",
-                section: "news",
-                keywords: ["tin tức", "sự kiện", "update", "cập nhật", "event"]
-            },
-            {
-                title: "Giới thiệu",
-                content: "Tìm hiểu về nhân vật và bản đồ trong game, khám phá thế giới Ấn Việt",
-                section: "about",
-                keywords: ["giới thiệu", "nhân vật", "bản đồ", "characters", "maps", "about"]
+                title: "Sản phẩm",
+                content: "Khám phá các sản phẩm game và dịch vụ của Ấn Việt",
+                section: "product",
+                keywords: ["sản phẩm", "game", "dịch vụ", "product", "ứng dụng"]
             },
             {
                 title: "Hỗ trợ khách hàng",
@@ -684,4 +613,5 @@
         });
     </script>
 </body>
+</html>
 </html>

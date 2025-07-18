@@ -267,11 +267,48 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: #490f1a;
-    backdrop-filter: blur(10px);
+    background: transparent;
+    backdrop-filter: none;
     z-index: 1000;
     transition: all 0.3s ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid transparent;
+}
+
+.header.scrolled {
+    background: #490f1a;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header.scrolled .nav-menu a {
+    text-shadow: none;
+}
+
+.header.scrolled .search-box input {
+    text-shadow: none;
+}
+
+/* Mobile menu when header is scrolled */
+@media (max-width: 768px) {
+    .header.scrolled .nav-menu {
+        background: #490f1a;
+        backdrop-filter: blur(10px);
+    }
+}
+
+@media (max-width: 400px) {
+    .header.scrolled .nav-menu {
+        background: #490f1a;
+        backdrop-filter: blur(10px);
+    }
+}
+
+/* Extra small mobile - single column for characters */
+@media (max-width: 320px) {
+    .characters-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
 }
 
 .nav {
@@ -326,6 +363,7 @@ body {
     transition: all 0.3s ease;
     position: relative;
     display: block;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 .nav-menu a:hover {
@@ -363,8 +401,8 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
-    /* White border background */
-    background: #ffffff;
+    /* Transparent border background */
+    background: rgba(255, 255, 255, 0.2);
     clip-path: polygon(
         25px 0%, 
         calc(100% - 25px) 0%, 
@@ -373,6 +411,7 @@ body {
         25px 100%, 
         0% 50%
     );
+    transition: background 0.3s ease;
 }
 
 /* Inner background layer */
@@ -383,7 +422,8 @@ body {
     left: 2px;
     right: 2px;
     bottom: 1px;
-    background: #490f1a;
+    background: transparent;
+    backdrop-filter: none;
     z-index: -1;
     clip-path: polygon(
         23px 0%, 
@@ -393,7 +433,16 @@ body {
         23px 100%, 
         0% 50%
     );
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.header.scrolled .search-form {
+    background: #ffffff;
+}
+
+.header.scrolled .search-form::before {
+    background: #490f1a;
+    backdrop-filter: none;
 }
 
 
@@ -408,6 +457,7 @@ body {
     font-weight: 500;
     outline: none;
     z-index: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 0, 0, 0.8);
 }
 
 .search-box input::placeholder {
@@ -510,8 +560,8 @@ body {
 .main-content {
     background: url('images/BGW.png') center top/cover no-repeat;
     background-attachment: fixed;
+    background-repeat: no-repeat;
     min-height: 100vh;
-    padding-top: 70px;
     position: relative;
 }
 
@@ -530,6 +580,7 @@ body {
     position: relative;
     z-index: 2;
     padding: 2rem 20px;
+
 }
 
 /* Main Banner Image */
@@ -555,6 +606,161 @@ body {
     font-weight: 500;
 }
 
+/* Video Banner Background */
+.main-banner-video {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin-left: calc(-50vw + 50%);
+    overflow: hidden;
+    left: 0;
+    margin-bottom: -70px;
+}
+
+.video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    filter: brightness(0.9) contrast(1.05);
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg, 
+        rgba(0, 0, 0, 0.2) 0%, 
+        rgba(0, 0, 0, 0.1) 50%, 
+        rgba(0, 0, 0, 0.2) 100%
+    );
+    z-index: 2;
+}
+
+.banner-content {
+    position: absolute;
+    top:85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 3;
+    padding: 2rem;
+    max-width: 90%;
+}
+
+.banner-content h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(45deg, #dbb856, #f4d03f, #dbb856);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShimmer 3s ease-in-out infinite;
+}
+
+.banner-content p {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 0 0 12px rgba(0, 0, 0, 0.7);
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.banner-content p:last-child {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.banner-actions {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.banner-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(45deg, #d4af37, #f7e98e);
+    color: #000;
+    padding: 15px 30px;
+    border-radius: 10px ;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+    border: none;
+    cursor: pointer;
+}
+
+.banner-actions .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6);
+    background: linear-gradient(45deg, #f7e98e, #d4af37);
+}
+
+@keyframes textShimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    animation: bounceUpDown 2s ease-in-out infinite;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-indicator:hover {
+    opacity: 1;
+}
+
+.scroll-arrow {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    opacity: 0.8;
+}
+
+@keyframes bounceUpDown {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
 /* Content Grid Section */
 .content-grid-section {
     margin-top: 2rem;
@@ -564,7 +770,7 @@ body {
 .btn {
     padding: 1rem 2rem;
     border: none;
-    border-radius: 50px;
+    border-radius: 10px;
     font-family: inherit;
     font-weight: 600;
     font-size: 1rem;
@@ -697,6 +903,7 @@ body {
     padding: 6rem 0;
     background: url('images/BGW.png') center top/cover no-repeat;
     background-attachment: fixed;
+    background-repeat: no-repeat;
     position: relative;
 }
 
@@ -727,41 +934,19 @@ body {
     background-clip: text;
 }
 
-/* Đặc biệt styling cho tiêu đề trong about-section */
+/* Styling cho tiêu đề trong about-section giống như section-title chung */
 .about-section .section-title {
+    font-size: 3rem;
+    font-weight: 600;
     text-align: left;
-    color: #4a1f1a;
-    background: none;
-    -webkit-text-fill-color: #4a1f1a;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    position: relative;
-    padding-bottom: 1rem;
+    margin-bottom: 4rem;
+    background: linear-gradient(45deg, #d4af37, #f7e98e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.about-section .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 8px;
-    width: 20%;
-    height: 3px;
-    background: linear-gradient(90deg, #f99a18 0%, #ff8c00 20%, #ff7b00 40%, rgba(249, 154, 24, 0.8) 60%, rgba(249, 154, 24, 0.4) 80%, rgba(249, 154, 24, 0.1) 90%, transparent 100%);
-    border-radius: 2px;
-}
 
-.about-section .section-title::before {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: -10px;
-    width: 20px;
-    height: 20px;
-    background: url('images/kw.png') no-repeat center center;
-    background-size: contain;
-    filter: drop-shadow(0 0 5px rgba(249, 154, 24, 0.6));
-}
 
 .news-grid {
     display: grid;
@@ -830,8 +1015,26 @@ body {
 /* About Section (Giới Thiệu) */
 .about-section {
     padding: 6rem 0;
-    background: #f5f2e8;
+    background: url('images/background_gioithieu.png') center center/cover no-repeat;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     position: relative;
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.about-section .container {
+    position: relative;
+    z-index: 2;
 }
 
 .about-category {
@@ -847,7 +1050,7 @@ body {
 
 .category-title {
     background: #4a1f1a;
-    color: #ffffff;
+    color: #f4d03f;
     padding: 12px 24px;
     border-radius: 8px;
     font-size: 1.2rem;
@@ -857,18 +1060,20 @@ body {
 }
 
 .view-all-link {
-    color: #8b4513;
+    color: #f4d03f;
     text-decoration: none;
     font-weight: 500;
     font-size: 1rem;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     gap: 5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .view-all-link:hover {
-    color: #4a1f1a;
+    color: #dbb856;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
 
 .view-all-link span {
@@ -887,10 +1092,14 @@ body {
     margin-bottom: 1.5rem;
 }
 
+.characters-grid {
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
 .category-item {
     aspect-ratio: 4/3;
     border-radius: 12px;
-    overflow: hidden;
     transition: transform 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -902,30 +1111,45 @@ body {
 .item-image-placeholder {
     width: 100%;
     height: 100%;
-    background: #2a2a2a;
-    border: 3px solid #d4af37;
     border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: visible;
     position: relative;
+    transition: all 0.3s ease;
 }
 
-.item-image-placeholder::before {
-    content: '';
-    width: 40px;
-    height: 40px;
-    background: rgba(212, 175, 55, 0.3);
-    border-radius: 50%;
+.item-image-placeholder:hover {
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+.item-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.item-image-placeholder:hover img {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 .category-description {
-    color: #4a1f1a;
+    color: #f4d03f;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     font-size: 1.1rem;
     font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: default;
     text-align: left;
     margin: 0;
     line-height: 1.5;
+}
+
+.category-description:hover {
+    color: #dbb856;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
 
 
@@ -1029,6 +1253,8 @@ body {
     border-radius: 10px;
     color: #ffffff;
     font-size: 1rem;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 500;
     transition: border-color 0.3s ease;
     box-sizing: border-box;
 }
@@ -1232,8 +1458,8 @@ body {
         left: -100%;
         width: 100%;
         height: calc(100vh - 70px);
-        background: #490f1a;
-        backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.1);
+        backdrop-filter: none;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
@@ -1399,18 +1625,7 @@ body {
         font-size: 2rem;
     }
     
-    .about-section .section-title::before {
-        width: 16px;
-        height: 16px;
-        bottom: -6px;
-        left: -8px;
-    }
-    
-    .about-section .section-title::after {
-        width: 30%;
-        height: 2px;
-        left: 6px;
-    }
+
 
     .download-content h2 {
         font-size: 2rem;
@@ -1422,11 +1637,7 @@ body {
         gap: 10px;
     }
     
-    /* Background optimization for mobile */
-    .main-content,
-    .news-section {
-        background-attachment: scroll;
-    }
+    /* Background parallax preserved for all devices */
     
     /* About Section Responsive */
     .about-section {
@@ -1436,6 +1647,10 @@ body {
     .category-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
+    }
+    
+    .characters-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .category-header {
@@ -1451,6 +1666,49 @@ body {
     
     .view-all-link {
         font-size: 0.9rem;
+    }
+    
+    /* Video Banner Responsive */
+    .main-banner-video {
+        height: 100vh;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-bottom: -70px;
+    }
+    
+    .banner-content {
+        padding: 1.5rem;
+        max-width: 95%;
+    }
+    
+    .banner-content h1 {
+        font-size: 2.2rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.2;
+    }
+    
+    .banner-content p {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .banner-content p:last-child {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .banner-actions .btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+        gap: 8px;
+    }
+    
+    .scroll-indicator {
+        bottom: 15px;
+    }
+    
+    .scroll-arrow {
+        font-size: 1.8rem;
     }
 }
 
@@ -1585,6 +1843,8 @@ body {
     .form-group textarea {
         padding: 0.8rem;
         font-size: 0.9rem;
+        font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        font-weight: 500;
     }
     
     .btn-action {
@@ -1651,10 +1911,10 @@ body {
         top: -1px;
     }
     
-    /* Background optimization for small mobile */
+    /* Background parallax preserved for small mobile */
     .main-content,
-    .news-section {
-        background-attachment: scroll;
+    .news-section,
+    .about-section {
         background-size: cover;
     }
     
@@ -1663,26 +1923,15 @@ body {
         padding: 3rem 0;
     }
     
-    .about-section .section-title {
-        font-size: 1.8rem;
-    }
-    
-    .about-section .section-title::before {
-        width: 14px;
-        height: 14px;
-        bottom: -5px;
-        left: -7px;
-    }
-    
-    .about-section .section-title::after {
-        width: 40%;
-        height: 2px;
-        left: 5px;
-    }
+
     
     .category-grid {
         grid-template-columns: 1fr 1fr;
         gap: 0.8rem;
+    }
+    
+    .characters-grid {
+        grid-template-columns: 1fr 1fr;
     }
     
     .category-description {
@@ -1692,6 +1941,50 @@ body {
     .spinner {
         width: 40px;
         height: 40px;
+    }
+    
+    /* Video Banner Mobile Small */
+    .main-banner-video {
+        height: 100vh;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-bottom: -70px;
+    }
+    
+    .banner-content {
+        padding: 1rem;
+        max-width: 98%;
+    }
+    
+    .banner-content h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.6rem;
+        line-height: 1.1;
+    }
+    
+    .banner-content p {
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+        line-height: 1.4;
+    }
+    
+    .banner-content p:last-child {
+        font-size: 0.8rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .banner-actions .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        gap: 6px;
+    }
+    
+    .scroll-indicator {
+        bottom: 10px;
+    }
+    
+    .scroll-arrow {
+        font-size: 1.5rem;
     }
 }
 
@@ -1802,8 +2095,8 @@ body {
         left: -100%;
         width: 100%;
         height: calc(100vh - 60px);
-        background: #490f1a;
-        backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.1);
+        backdrop-filter: none;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
@@ -1843,7 +2136,7 @@ body {
     }
     
     .main-content {
-        padding-top: 60px;
+        padding-top: 0px;
     }
     
     /* Loading Screen for extra small devices */
@@ -1866,10 +2159,10 @@ body {
         top: -1px;
     }
     
-    /* Background optimization for extra small devices */
+    /* Background parallax preserved for extra small devices */
     .main-content,
-    .news-section {
-        background-attachment: scroll;
+    .news-section,
+    .about-section {
         background-size: cover;
         background-position: center center;
     }
@@ -1879,26 +2172,15 @@ body {
         padding: 2rem 0;
     }
     
-    .about-section .section-title {
-        font-size: 1.5rem;
-    }
-    
-    .about-section .section-title::before {
-        width: 12px;
-        height: 12px;
-        bottom: -4px;
-        left: -6px;
-    }
-    
-    .about-section .section-title::after {
-        width: 50%;
-        height: 1.5px;
-        left: 4px;
-    }
+
     
     .category-grid {
         grid-template-columns: 1fr 1fr;
         gap: 0.5rem;
+    }
+    
+    .characters-grid {
+        grid-template-columns: 1fr 1fr;
     }
     
     .category-title {
@@ -1912,6 +2194,12 @@ body {
     
     .category-description {
         font-size: 0.9rem;
+    }
+    
+    /* Video Banner Extra Small */
+    .main-banner-video {
+        height: 100vh;
+        margin-bottom: -60px;
     }
 }
 
@@ -1963,26 +2251,15 @@ body {
         padding: 1.5rem 0;
     }
     
-    .about-section .section-title {
-        font-size: 1.3rem;
-    }
-    
-    .about-section .section-title::before {
-        width: 10px;
-        height: 10px;
-        bottom: -3px;
-        left: -5px;
-    }
-    
-    .about-section .section-title::after {
-        width: 60%;
-        height: 1px;
-        left: 3px;
-    }
+
     
     .category-grid {
         grid-template-columns: 1fr 1fr;
         gap: 0.4rem;
+    }
+    
+    .characters-grid {
+        grid-template-columns: 1fr 1fr;
     }
     
     .category-title {
@@ -2014,6 +2291,21 @@ body {
         right: -4px;
         top: 0px;
     }
+    
+    /* Video Banner iPhone SE */
+    .main-banner-video {
+        height: 100vh;
+        margin-bottom: -60px;
+    }
+}
+
+/* Parallax Performance Optimization */
+.main-content,
+.news-section,
+.about-section {
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
 }
 
 /* Animations */

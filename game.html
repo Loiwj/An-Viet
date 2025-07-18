@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ấn Việt - Thất Ấn Khởi Nguyên | Game Mobile Chiến Thuật Hàng Đầu Việt Nam</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Ấn Việt - Thất Ấn Khởi Nguyên là game mobile chiến thuật hấp dẫn với đồ họa đẹp mắt, lối chơi độc đáo. Tải ngay trên App Store và Google Play để khám phá thế giới võ thuật kỳ ảo.">
+    <meta name="keywords" content="Ấn Việt, Thất Ấn Khởi Nguyên, game mobile, game chiến thuật, game Việt Nam, võ thuật, RPG, game online, tải game, App Store, Google Play">
+    <meta name="author" content="Ấn Việt Studio">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Vietnamese">
+    <meta name="geo.region" content="VN">
+    <meta name="geo.country" content="Vietnam">
+    <meta name="geo.placename" content="Cần Thơ">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anviet.vn/">
+    <meta property="og:title" content="Ấn Việt - Thất Ấn Khởi Nguyên | Game Mobile Chiến Thuật Hàng Đầu">
+    <meta property="og:description" content="Khám phá thế giới võ thuật kỳ ảo với game mobile Ấn Việt - Thất Ấn Khởi Nguyên. Đồ họa đẹp mắt, lối chơi chiến thuật độc đáo. Tải ngay!">
+    <meta property="og:image" content="https://anviet.vn/images/logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Ấn Việt">
+    <meta property="og:locale" content="vi_VN">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://anviet.vn/">
+    <meta property="twitter:title" content="Ấn Việt - Thất Ấn Khởi Nguyên | Game Mobile Chiến Thuật">
+    <meta property="twitter:description" content="Game mobile chiến thuật hấp dẫn với thế giới võ thuật kỳ ảo. Tải ngay trên App Store và Google Play!">
+    <meta property="twitter:image" content="https://anviet.vn/images/logo.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://anviet.vn/">
+    
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    
+    <!-- Mobile App Links -->
+    <meta name="apple-itunes-app" content="app-id=XXXXXX">
+    <meta name="google-play-app" content="app-id=com.anviet.game">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="game.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Ấn Việt Studio",
+        "alternateName": "An Viet",
+        "url": "https://anviet.click",
+        "logo": "https://anviet.click/images/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+84399607726",
+            "contactType": "customer service",
+            "email": "Anviett@gmail.com",
+            "availableLanguage": "Vietnamese"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "49A, Khu vực Thạnh Huề, Phường Thường Thạnh",
+            "addressLocality": "Cái Răng",
+            "addressRegion": "Cần Thơ",
+            "addressCountry": "VN"
+        },
+        "sameAs": [
+            "https://www.facebook.com/anvietgame",
+            "https://www.youtube.com/c/anvietgame"
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Ấn Việt - Thất Ấn Khởi Nguyên",
+        "description": "Game mobile chiến thuật với thế giới võ thuật kỳ ảo, đồ họa đẹp mắt và lối chơi độc đáo",
+        "genre": ["Strategy", "RPG", "Action"],
+        "gamePlatform": ["iOS", "Android"],
+        "applicationCategory": "Game",
+        "operatingSystem": ["iOS", "Android"],
+        "publisher": {
+            "@type": "Organization",
+            "name": "Ấn Việt Studio"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "VND",
+            "availability": "https://schema.org/InStock"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "reviewCount": "1000"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <img src="images/logodautrang.png" alt="Ấn Việt - Thất Ấn Khởi Nguyên Logo Loading" class="logo-loading" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <img src="images/logo.png" alt="Ấn Việt Game Mobile Chiến Thuật Logo" class="logo-loading" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            </div>
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
+                <div class="keyword-load-indicator">
+                    <img src="images/kw.png" alt="Ấn Việt Game Loading Progress Indicator" class="keyword-load-icon">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <a href="#home" class="logo-link">
+                    <img src="images/logo.png" alt="Ấn Việt - Thất Ấn Khởi Nguyên Game Logo" class="logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home">TRANG CHỦ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#news">TIN TỨC</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about">GIỚI THIỆU</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a href="#guide">HƯỚNG DẪN</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#community">CỘNG ĐỒNG</a>
+                </li> -->
+                <li class="nav-item">
+                    <a href="#contact">HỖ TRỢ</a>
+                </li>
+            </ul>
+            <div class="search-box">
+                <form class="search-form" onsubmit="performSearch(event)">
+                    <input type="text" id="search-input" placeholder="Tìm kiếm..." autocomplete="off">
+                    <button type="submit">
+                        <img src="images/kinhlup.png" alt="Tìm kiếm game Ấn Việt" style="width: 20px; height: 20px;">
+                    </button>
+                </form>
+                <div class="search-results" id="search-results"></div>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <section id="home" class="main-content">
+        <!-- Video Banner Background Fullscreen -->
+        <div class="main-banner-video">
+            <video autoplay muted loop playsinline class="video-background">
+                <source src="videos/video_banner.mp4" type="video/mp4">
+                <!-- Fallback for browsers that don't support video -->
+                Trình duyệt của bạn không hỗ trợ video HTML5.
+            </video>
+            <div class="video-overlay"></div>
+            <div class="banner-content">
+                
+                <div class="banner-actions">
+                    <button class="btn btn-action">Xem thêm 
+                        <img src="images/muiten_xemthem.png" alt="Xem thêm thông tin game" style="height: 10px;">
+                    </button>
+                </div>
+            </div>
+            <div class="scroll-indicator" onclick="scrollToNextSection()">
+                <div class="scroll-arrow">↓</div>
+            </div>
+        </div>
+        <div class="container">
+
+            <!-- Content Grid
+            <div class="content-grid-section">
+                <div class="grid-row">
+                    <div class="content-box">
+                        <div class="box-header">
+                            <h3>Nội dung 1</h3>
+                        </div>
+                        <div class="box-content">
+                            <p>Vùng nội dung để chèn thông tin</p>
+                        </div>
+                    </div>
+                    <div class="content-box">
+                        <div class="box-header">
+                            <h3>Nội dung 2</h3>
+                        </div>
+                        <div class="box-content">
+                            <p>Vùng nội dung để chèn thông tin</p>
+                        </div>
+                    </div>
+                    <div class="content-box">
+                        <div class="box-header">
+                            <h3>Nội dung 3</h3>
+                        </div>
+                        <div class="box-content">
+                            <p>Vùng nội dung để chèn thông tin</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+            
+    </section>
+
+    <!-- News & Events Section -->
+    <section id="news" class="news-section">
+        <div class="container">
+            <h2 class="section-title">Tin Tức & Sự Kiện</h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-image">
+                        <div class="image-placeholder">📰</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>Tiêu đề tin tức 1</h3>
+                        <p class="news-date">25/12/2024</p>
+                        <p class="news-excerpt">Mô tả ngắn gọn về tin tức...</p>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-image">
+                        <div class="image-placeholder">🎉</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>Tiêu đề tin tức 2</h3>
+                        <p class="news-date">22/12/2024</p>
+                        <p class="news-excerpt">Mô tả ngắn gọn về tin tức...</p>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-image">
+                        <div class="image-placeholder">🏆</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>Tiêu đề tin tức 3</h3>
+                        <p class="news-date">20/12/2024</p>
+                        <p class="news-excerpt">Mô tả ngắn gọn về tin tức...</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (Giới Thiệu) -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">Giới Thiệu</h2>
+            
+            <!-- Characters Section -->
+            <div class="about-category">
+                <div class="category-header">
+                    <h3 class="category-title">Nhân vật</h3>
+                    <a href="#" class="view-all-link">Xem tất cả nhân vật <span><img src="images/keywordload.png" alt="Xem thêm nhân vật game" style=" height: 10px; rotate: 90deg;"></span></a>
+                </div>
+                <div class="category-grid characters-grid">
+                    <div class="category-item">
+                        <div class="item-image-placeholder">
+                            <img src="images/nhan_vat_1.png" alt="nhân vật 1">
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <div class="item-image-placeholder">
+                            <img src="images/nhan_vat_2.png" alt="nhân vật 2">
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <div class="item-image-placeholder">
+                            <img src="images/nhan_vat_3.png" alt="nhân vật 3">
+                        </div>
+                    </div>
+                </div>
+                <p class="category-description">Bạn đã sẵn sàng đánh BOSS chưa?</p>
+            </div>
+            <!-- Characters Section -->
+            <div class="about-category">
+                <div class="category-header">
+                    <h3 class="category-title">Golem</h3>
+                    <a href="#" class="view-all-link">Xem tất cả golem <span><img src="images/keywordload.png" alt="Xem thêm nhân vật game" style=" height: 10px; rotate: 90deg;"></span></a>
+                </div>
+                <div class="category-grid">
+                    <div class="category-item">
+                        <div class="item-image-placeholder"><img src="images/golem_1.png" alt="golem 1"></div>
+                    </div>
+                    <div class="category-item">
+                        <div class="item-image-placeholder"><img src="images/golem_2.png" alt="golem 2"></div>
+                    </div>
+                    <div class="category-item">
+                        <div class="item-image-placeholder"><img src="images/golem_3.png" alt="golem 3"></div>
+                    </div>
+                    <div class="category-item">
+                        <div class="item-image-placeholder"><img src="images/golem_4.png" alt="golem 4"></div>
+                    </div>
+                </div>
+                <p class="category-description">Bạn đã sẵn sàng đánh BOSS chưa?</p>
+            </div>
+
+            <!-- Maps Section -->
+            <div class="about-category">
+                <div class="category-header">
+                    <h3 class="category-title">Bản đồ</h3>
+                    <a href="#" class="view-all-link">Xem tất cả các bản đồ <span><img src="images/keywordload.png" alt="Xem thêm bản đồ game" style=" height: 10px; rotate: 90deg;"></span></a>
+                </div>
+                <div class="category-grid">
+                    <div class="category-item">
+                        <div class="item-image-placeholder"><img src="images/ban_do_1.png" alt="map 1"></div>
+                    </div>
+                    <div class="category-item">
+                        <div class="item-image-placeholder"><img src="images/ban_do_2.png" alt="map 2"></div>
+                    </div>
+                    <div class="category-item">
+                        <div class="item-image-placeholder"><img src="images/ban_do_3.png" alt="map 3"></div>
+                    </div>
+                    <div class="category-item">
+                        <div class="item-image-placeholder"><img src="images/ban_do_4.png" alt="map 4"></div>
+                    </div>
+                </div>
+                <p class="category-description">Cùng phiêu lưu đến các chặng đường kỳ ảo thôi!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Badges -->
+    <div class="download-badges">
+        <a href="#" class="app-store-badge">
+            <div class="badge-content">
+                <div class="apple-logo">
+                    <svg width="24" height="29" viewBox="0 0 24 29" fill="none">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="badge-text">
+                    <div class="badge-subtitle">Available on the</div>
+                    <div class="badge-title">App Store</div>
+                </div>
+            </div>
+        </a>
+        
+        <a href="#" class="google-play-badge">
+            <div class="badge-content">
+                <div class="play-logo">
+                    <img src="images/google-play-store-logo-svgrepo-com.svg" alt="Tải Ấn Việt trên Google Play Store" style="width: 20px; height: 20px;">
+                </div>
+                <div class="badge-text">
+                    <div class="badge-subtitle">GET IT ON</div>
+                    <div class="badge-title">Google Play</div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+       <!-- Contact Section -->
+       <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Liên Hệ Và Hỗ Trợ</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Thông Tin Liên Hệ</h3>
+                    <div class="contact-item">
+                        <span class="contact-icon"><img src="images/Mail.png" alt="Email liên hệ Ấn Việt"></span>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>Anviett@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><img src="images/phone.png" alt="Hotline hỗ trợ Ấn Việt"></span>
+                        <div class="contact-details">
+                            <h4>Hotline</h4>
+                            <p>0399607726</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><img src="images/live.png" alt="Địa chỉ văn phòng Ấn Việt"></span>
+                        <div class="contact-details">
+                            <h4>Địa Chỉ</h4>
+                            <p>49A, Khu vực Thạnh Huề, Phường Thường Thạnh </p>
+                            <p>Quận Cái Răng, TP. Cần Thơ.</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><img src="images/time.png" alt="Giờ làm việc Ấn Việt"></span>
+                        <div class="contact-details">
+                            <h4>Giờ Làm Việc</h4>
+                            <p>Thứ 2 - Thứ 6: 8:00 - 18:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Gửi Tin Nhắn</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Họ và tên *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Số điện thoại">
+                        </div>
+                        <div class="form-group">
+                            <select>
+                                <option value="">Chọn chủ đề</option>
+                                <option value="support">Hỗ trợ kỹ thuật</option>
+                                <option value="business">Hợp tác kinh doanh</option>
+                                <option value="feedback">Góp ý / Phản hồi</option>
+                                <option value="other">Khác</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Nội dung tin nhắn *" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Gửi Tin Nhắn</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="images/logo.png" alt="Ấn Việt - Thất Ấn Khởi Nguyên Game Studio Logo" class="footer-logo">
+                    <p>Nền tảng game hàng đầu Việt Nam</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Sản Phẩm</h4>
+                        <ul>
+                            <li><a href="#">2D Artist</a></li>
+                            <li><a href="#">Graphic / Promo Designer</a></li>
+                            <li><a href="#">Lead 3D Animator</a></li>
+                            <li><a href="#">Ilustrator 2D</a></li>
+                        </ul>
+
+                    </div>
+                    <div class="footer-column">
+                        <h4>Hỗ Trợ</h4>
+                        <ul>
+                            <li><a href="#">Trung tâm trợ giúp</a></li>
+                            <li><a href="#">Báo lỗi</a></li>
+                            <li><a href="#">Điều khoản sử dụng</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Liên Hệ</h4>
+                        <ul>
+                            <li><a href="#">Anviett@gmail.com</a></li>
+                            <li><a href="#">0399607726</a></li>
+                            <li><a href="#">49A, Khu vực Thạnh Huề, Phường Thường Thạnh, Quận Cái Răng, TP. Cần Thơ. </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ấn Việt. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loading Screen Management với fallback
+        let loadingComplete = false;
+        
+        function hideLoadingScreen() {
+            const loadingScreen = document.getElementById('loading-screen');
+            if (!loadingComplete && loadingScreen) {
+                loadingComplete = true;
+                loadingScreen.classList.add('hide');
+                
+                // Remove loading screen từ DOM sau khi animation hoàn thành
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 500);
+            }
+        }
+        
+        // Hide loading screen khi window load hoặc sau timeout
+        window.addEventListener('load', function() {
+            setTimeout(hideLoadingScreen, 1500); // Giảm thời gian chờ
+        });
+        
+        // Fallback timeout nếu load event không fire
+        setTimeout(hideLoadingScreen, 5000); // Maximum 5 giây
+
+        // Preload critical images with error handling
+        function preloadImages() {
+            const images = [
+                'images/logo.png',
+                'images/BGW.png'
+            ];
+            
+            images.forEach(src => {
+                const img = new Image();
+                img.onload = () => console.log(`✓ Loaded: ${src}`);
+                img.onerror = () => console.error(`✗ Failed to load: ${src}`);
+                img.src = src;
+            });
+        }
+
+        // Start preloading when DOM is ready
+        document.addEventListener('DOMContentLoaded', preloadImages);
+
+        // Mobile menu toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Loading progress simulation
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressBar = document.querySelector('.progress-bar');
+            const keywordIndicator = document.querySelector('.keyword-load-indicator');
+            
+            // Simulate realistic loading progress
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 15;
+                if (progress > 100) progress = 100;
+                
+                progressBar.style.width = progress + '%';
+                if (keywordIndicator) {
+                    keywordIndicator.style.width = progress + '%';
+                }
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                }
+            }, 200);
+        });
+
+        // Header scroll effect
+        function handleHeaderScroll() {
+            const header = document.querySelector('.header');
+            const videoBanner = document.querySelector('.main-banner-video');
+            
+            if (!header || !videoBanner) return;
+            
+            const videoBannerHeight = videoBanner.offsetHeight;
+            const scrollPosition = window.scrollY;
+            const threshold = videoBannerHeight - 150; // Khoảng cách để bắt đầu thay đổi
+            
+            if (scrollPosition > threshold) {
+                // Khi scroll qua video banner
+                header.classList.add('scrolled');
+            } else {
+                // Khi ở phần video banner
+                header.classList.remove('scrolled');
+            }
+        }
+
+        // Scroll to next section function
+        function scrollToNextSection() {
+            const newsSection = document.getElementById('news');
+            if (newsSection) {
+                newsSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Throttle function để tối ưu performance
+        function throttle(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Add scroll event listener for header effect with throttle
+        window.addEventListener('scroll', throttle(handleHeaderScroll, 10));
+        window.addEventListener('load', handleHeaderScroll);
+
+        // Search functionality
+        const searchData = [
+            {
+                title: "Ấn Việt - Thất Ấn Khởi Nguyên",
+                content: "Game mobile hấp dẫn với lối chơi chiến thuật độc đáo",
+                section: "home",
+                keywords: ["game", "mobile", "chiến thuật", "ấn việt", "thất ấn khởi nguyên"]
+            },
+            {
+                title: "Tin tức & Sự kiện",
+                content: "Cập nhật tin tức mới nhất về game và các sự kiện đặc biệt",
+                section: "news",
+                keywords: ["tin tức", "sự kiện", "update", "cập nhật", "event"]
+            },
+            {
+                title: "Giới thiệu",
+                content: "Tìm hiểu về nhân vật và bản đồ trong game, khám phá thế giới Ấn Việt",
+                section: "about",
+                keywords: ["giới thiệu", "nhân vật", "bản đồ", "characters", "maps", "about"]
+            },
+            {
+                title: "Hỗ trợ khách hàng",
+                content: "Trung tâm trợ giúp, chat trực tuyến, báo lỗi, hướng dẫn sử dụng",
+                section: "support",
+                keywords: ["hỗ trợ", "trợ giúp", "chat", "báo lỗi", "hướng dẫn", "support"]
+            },
+            {
+                title: "Liên hệ",
+                content: "Email: support@anviet.vn, Hotline: 1900 8888, Địa chỉ văn phòng",
+                section: "contact",
+                keywords: ["liên hệ", "email", "hotline", "địa chỉ", "support", "contact"]
+            },
+            {
+                title: "Tải game",
+                content: "Download Ấn Việt trên App Store và Google Play",
+                section: "download",
+                keywords: ["tải", "download", "app store", "google play", "cài đặt"]
+            },
+            {
+                title: "Cộng đồng",
+                content: "Tham gia cộng đồng game trên Facebook, Discord, YouTube",
+                section: "community",
+                keywords: ["cộng đồng", "facebook", "discord", "youtube", "community"]
+            }
+        ];
+
+        function performSearch(event) {
+            event.preventDefault();
+            const searchInput = document.getElementById('search-input');
+            const searchResults = document.getElementById('search-results');
+            const query = searchInput.value.trim().toLowerCase();
+
+            if (query.length < 2) {
+                searchResults.style.display = 'none';
+                return;
+            }
+
+            const results = searchData.filter(item => {
+                return item.title.toLowerCase().includes(query) ||
+                       item.content.toLowerCase().includes(query) ||
+                       item.keywords.some(keyword => keyword.includes(query));
+            });
+
+            if (results.length > 0) {
+                let html = '';
+                results.forEach(result => {
+                    html += `
+                        <div class="search-result-item" onclick="goToSection('${result.section}')">
+                            <div class="search-result-title">${result.title}</div>
+                            <div class="search-result-snippet">${result.content}</div>
+                        </div>
+                    `;
+                });
+                searchResults.innerHTML = html;
+            } else {
+                searchResults.innerHTML = '<div class="search-no-results">Không tìm thấy kết quả nào</div>';
+            }
+
+            searchResults.style.display = 'block';
+        }
+
+        function goToSection(sectionId) {
+            document.getElementById('search-results').style.display = 'none';
+            document.getElementById('search-input').value = '';
+            
+            // Close mobile menu if open
+            document.querySelector('.nav-menu').classList.remove('active');
+            document.querySelector('.nav-toggle').classList.remove('active');
+            
+            // Scroll to section
+            const targetSection = document.getElementById(sectionId) || document.querySelector(`[href="#${sectionId}"]`);
+            if (targetSection) {
+                if (sectionId === 'support') {
+                    // Scroll to footer support section
+                    document.querySelector('.footer').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                } else if (sectionId === 'download') {
+                    // Focus on download badges
+                    document.querySelector('.download-badges').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                } else if (sectionId === 'community') {
+                    // Scroll to footer community section
+                    document.querySelector('.footer').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                } else {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        }
+
+        // Real-time search as user types
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('search-input');
+            
+            searchInput.addEventListener('input', function() {
+                if (this.value.length >= 2) {
+                    performSearch({ preventDefault: () => {} });
+                } else {
+                    document.getElementById('search-results').style.display = 'none';
+                }
+            });
+
+            // Hide search results when clicking outside
+            document.addEventListener('click', function(event) {
+                const searchBox = document.querySelector('.search-box');
+                if (!searchBox.contains(event.target)) {
+                    document.getElementById('search-results').style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+</html>

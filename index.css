@@ -1,0 +1,238 @@
+/* Background trang chủ */
+body {
+    background: #81171e !important;
+    color: white !important;
+}
+
+/* Loading Screen Custom Styles */
+.loading-screen {
+    background: #f1ded0 !important;
+    background-image: none !important;
+}
+
+/* Làm logo loading lớn hơn */
+.logo-loading {
+    transform: scale(1.5) !important;
+    max-width: none !important;
+    max-height: none !important;
+}
+
+.logo-loading:first-child {
+    height: 80px !important; /* Logo đầu tiên lớn hơn */
+}
+
+.logo-loading:nth-child(2) {
+    height: 400px !important; /* Logo thứ hai lớn hơn nhiều */
+}
+
+.loading-logo {
+    margin-bottom: 3rem !important;
+}
+
+/* Thanh progress bar màu đỏ */
+.progress-bar {
+    background-color: #81171e !important;
+}
+
+/* Header Styles */
+.header {
+    background: #81171e !important;
+    backdrop-filter: none !important;
+    position: fixed !important;
+    width: 100% !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+}
+
+.header.scrolled {
+    background: #81171e !important;
+    backdrop-filter: none !important;
+}
+
+/* Logo header nhỏ lại */
+.nav-brand .logo {
+    height: 40px !important;
+    max-height: 40px !important;
+}
+
+/* Nav menu styles */
+.nav-menu a {
+    color: white !important;
+    font-weight: 500 !important;
+    position: relative !important;
+}
+
+.nav-menu a:hover::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: auto;
+    background-image: url('images/paten.png') !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 10;
+}
+
+/* Search box styles */
+.search-box input {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: white !important;
+    border-radius: 20px !important;
+}
+
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Main content không có video */
+.main-content {
+    margin-top: 60px !important;
+    padding: 2rem 0 !important;
+    background: #81171e !important;
+    background-image: none !important;
+    background-attachment: initial !important;
+    min-height: calc(100vh - 60px) !important;
+}
+
+.main-content::before {
+    display: none !important;
+}
+
+.main-banner-video {
+    display: none !important;
+}
+
+/* Khung chèn hình ở giữa */
+.image-container {
+    width: 90% !important;
+    max-width: 1200px !important;
+    height: 400px !important;
+    margin: 2rem auto !important;
+    border: 2px solid #f1ded0 !important;
+    border-radius: 15px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    position: relative !important;
+}
+
+.image-placeholder-main {
+    color: #f1ded0 !important;
+    font-size: 1.2rem !important;
+    text-align: center !important;
+}
+
+/* Button styles */
+.btn-action {
+    background: #81171e !important;
+    color: #f1ded0 !important;
+    border: 2px solid #f1ded0 !important;
+    box-shadow: 0 4px 15px rgba(129, 23, 30, 0.3) !important;
+}
+
+.btn-action:hover {
+    background: #f1ded0 !important;
+    color: #81171e !important;
+    box-shadow: 0 8px 25px rgba(241, 222, 208, 0.4) !important;
+}
+
+.btn-action img {
+    filter: brightness(0) saturate(100%) invert(92%) sepia(8%) saturate(1074%) hue-rotate(340deg) brightness(97%) contrast(95%) !important;
+}
+
+.btn-action:hover img {
+    filter: brightness(0) saturate(100%) invert(12%) sepia(48%) saturate(1843%) hue-rotate(321deg) brightness(96%) contrast(90%) !important;
+}
+
+/* Product Section Styles */
+.product-section {
+    background: #81171e !important;
+    padding: 3rem 0 !important;
+}
+
+.product-section .section-title {
+    color: #f1ded0 !important;
+    text-align: center !important;
+    font-size: 2.5rem !important;
+    font-weight: bold !important;
+    margin-bottom: 1rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    background: none !important;
+    background-image: none !important;
+    background-clip: initial !important;
+    -webkit-background-clip: initial !important;
+    -webkit-text-fill-color: #f1ded0 !important;
+}
+
+.product-section .section-title + img {
+    display: block !important;
+    margin: 0 auto 2rem auto !important;
+    width: 225px !important;
+    height: auto !important;
+    opacity: 0.8 !important;
+}
+
+.product-container {
+    position: relative !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+.product-image-box {
+    width: 100% !important;
+    height: 450px !important;
+    background: #f1ded0 !important;
+    border-radius: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    margin-bottom: 1rem !important;
+}
+
+.product-placeholder {
+    color: #81171e !important;
+    font-size: 1.3rem !important;
+    text-align: center !important;
+    font-weight: 500 !important;
+}
+
+.product-details-btn {
+    text-align: right !important;
+    margin-top: 2rem !important;
+}
+
+.btn-details {
+    background: transparent !important;
+    color: #f1ded0 !important;
+    text-decoration: none !important;
+    font-size: 1.1rem !important;
+    font-weight: 500 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    transition: all 0.3s ease !important;
+    padding: 8px 15px !important;
+    border-radius: 5px !important;
+}
+
+.btn-details:hover {
+    background: rgba(241, 222, 208, 0.1) !important;
+    transform: translateX(5px) !important;
+}
+
+.btn-details img {
+    transition: transform 0.3s ease !important;
+    filter: brightness(0) saturate(100%) invert(92%) sepia(8%) saturate(1074%) hue-rotate(340deg) brightness(97%) contrast(95%) !important;
+}
+
+.btn-details:hover img {
+    transform: translateX(3px) !important;
+} 
