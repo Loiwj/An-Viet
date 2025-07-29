@@ -1,0 +1,49 @@
+.loading-screen {
+    background: #f8decc !important;
+    background-image: none !important;
+}
+
+
+/* News Section Image Styles */
+.news-image {
+    height: 500px !important;
+    background: none !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+.news-image .image-placeholder {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 10px !important;
+    transition: all 0.3s ease !important;
+    font-size: inherit !important;
+    opacity: 1 !important;
+}
+
+.news-card:hover .news-image .image-placeholder {
+    transform: scale(1.05) !important;
+    opacity: 1 !important;
+}
+
+/* Đảm bảo hình ảnh hiển thị đúng */
+.news-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 10px !important;
+    transition: all 0.3s ease !important;
+}
+
+.news-card:hover .news-image img {
+    transform: scale(1.05) !important;
+}
+
+/* Ẩn phần mô tả ngắn gọn */
+.news-excerpt {
+    display: none !important;
+}
