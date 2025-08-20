@@ -162,10 +162,20 @@
 
     <!-- Main Content Section -->
     <section id="home" class="main-content">
-        <!-- Image Container -->
-        <div class="image-container">
-            <div class="image-placeholder-main">
-                <img src="images/baner_game.png" alt="Banner game Ấn Việt - Thất Ấn Khởi Nguyên" class="banner-image">
+        <!-- Video Banner Background Fullscreen -->
+        <div class="main-banner-video">
+            <video autoplay muted loop playsinline class="video-background">
+                <source src="videos/video_trangchu.mp4" type="video/mp4">
+                <!-- Fallback for browsers that don't support video -->
+                Trình duyệt của bạn không hỗ trợ video HTML5.
+            </video>
+            <div class="video-overlay"></div>
+            <div class="banner-content">
+                
+               
+            </div>
+            <div class="scroll-indicator" onclick="scrollToNextSection()">
+                <div class="scroll-arrow">↓</div>
             </div>
         </div>
     </section>
