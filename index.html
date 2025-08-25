@@ -416,13 +416,13 @@
             
             const videoBannerHeight = videoBanner.offsetHeight;
             const scrollPosition = window.scrollY;
-            const threshold = videoBannerHeight - 100; // Điều chỉnh để chuyển đổi đúng lúc
+            const threshold = videoBannerHeight - 150; // Khoảng cách để bắt đầu thay đổi
             
             if (scrollPosition > threshold) {
                 // Khi scroll qua video banner
                 header.classList.add('scrolled');
             } else {
-                // Khi ở phần video banner - luôn trong suốt
+                // Khi ở phần video banner
                 header.classList.remove('scrolled');
             }
         }
@@ -453,22 +453,7 @@
 
         // Add scroll event listener for header effect with throttle
         window.addEventListener('scroll', throttle(handleHeaderScroll, 10));
-        window.addEventListener('load', function() {
-            handleHeaderScroll();
-            // Đảm bảo header trong suốt khi trang vừa load
-            const header = document.querySelector('.header');
-            if (header && window.scrollY < 50) {
-                header.classList.remove('scrolled');
-            }
-        });
-        
-        // Đảm bảo header trong suốt khi DOM ready
-        document.addEventListener('DOMContentLoaded', function() {
-            const header = document.querySelector('.header');
-            if (header) {
-                header.classList.remove('scrolled');
-            }
-        });
+        window.addEventListener('load', handleHeaderScroll);
 
         // Search functionality
         const searchData = [
