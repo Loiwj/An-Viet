@@ -4,43 +4,58 @@
 }
 
 
-/* News Section Image Styles */
+/* News Section Image Styles - Tỷ lệ vuông hoàn hảo */
 .news-image {
-    height: 500px !important;
+    width: 100% !important;
+    height: 0 !important;
+    padding-bottom: 100% !important;
     background: none !important;
     border-radius: 10px !important;
     overflow: hidden !important;
     position: relative !important;
 }
 
+/* News Card Hover Effect - Phóng to toàn bộ card */
+.news-card {
+    transition: transform 0.3s ease !important;
+    border-radius: 10px !important;
+}
+
+.news-card:hover {
+    transform: scale(1.05) !important;
+}
+
 .news-image .image-placeholder {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
     object-position: center !important;
     border-radius: 10px !important;
-    transition: all 0.3s ease !important;
     font-size: inherit !important;
     opacity: 1 !important;
+    transform: none !important;
 }
 
-.news-card:hover .news-image .image-placeholder {
-    transform: scale(1.05) !important;
-    opacity: 1 !important;
-}
-
-/* Đảm bảo hình ảnh hiển thị đúng */
+/* Đảm bảo hình ảnh hiển thị đúng và không bị scale khi hover */
 .news-image img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
     object-position: center !important;
     border-radius: 10px !important;
-    transition: all 0.3s ease !important;
+    transform: none !important;
 }
 
-.news-card:hover .news-image img {
-    transform: scale(1.05) !important;
+/* Ngăn chặn mọi hiệu ứng scale trên hình ảnh khi hover */
+.news-card:hover .news-image img,
+.news-card:hover .news-image .image-placeholder {
+    transform: none !important;
 }
 
 /* Ẩn phần mô tả ngắn gọn */

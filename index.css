@@ -34,16 +34,18 @@ body {
     background-color: #81171e !important;
 }
 
-/* Header Styles - Background cố định, không trong suốt */
+/* Header Styles - Giống như trang game */
 .header {
-    background: #490f1a !important;
-    backdrop-filter: none !important;
     position: fixed !important;
-    width: 100% !important;
     top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
     z-index: 1000 !important;
     transition: all 0.3s ease !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-bottom: 1px solid transparent !important;
+    width: 100% !important;
 }
 
 .header.scrolled {
@@ -123,15 +125,15 @@ body {
     display: none !important;
 }
 
-/* Video Banner Background for Index Page - Điều chỉnh để không có khoảng trống */
+/* Video Banner Background for Index Page - Video nằm sát header */
 .main-banner-video {
     position: relative !important;
     width: 100vw !important;
-    height: calc(100vh - 60px) !important; /* Giảm xuống để vừa hơn */
+    height: 100vh !important; /* Full viewport height */
     margin-left: calc(-50vw + 50%) !important;
     overflow: hidden !important;
     left: 0 !important;
-    margin-top: 60px !important; /* Giảm margin-top để loại bỏ viền đỏ */
+    margin-top: 0 !important; /* Bỏ margin-top để video sát header */
     margin-bottom: 0 !important;
 }
 
@@ -348,4 +350,37 @@ body {
 
 .btn-details:hover img {
     transform: translateX(3px) !important;
+}
+
+/* Download Badges - Góc dưới bên phải sát góc */
+.download-badges {
+    position: fixed !important;
+    bottom: 5px !important;
+    right: 5px !important;
+    z-index: 999 !important;
+    width: auto !important;
+    max-width: none !important;
+}
+
+.download-image {
+    width: 100% !important;
+}
+
+.download-image img {
+    max-width: 7vw !important;
+    height: auto !important;
+    min-width: 50px !important;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+    .download-badges {
+        bottom: 3px !important;
+        right: 3px !important;
+    }
+    
+    .download-image img {
+        max-width: 8vw !important;
+        min-width: 40px !important;
+    }
 } 
